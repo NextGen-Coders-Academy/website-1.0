@@ -1,13 +1,18 @@
-const { Sequelize, DataTypes } = require('sequelize');
-
-const Test = sequelize.define('Test', {
-    // Model attributes are defined here
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    }
-  }, {
-  });
-  
-  // `sequelize.define` also returns the model
-  console.log(User === sequelize.models.User); // true
+module.exports = (sequelize, DataTypes) => {
+    const Test = sequelize.define( 'test', {
+        id: {
+            allowNull: false,
+            primaryKey: true,
+            type: DataTypes.INTEGER,
+            autoIncrement: true
+        },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+    }, {
+        timestamps: true,
+        tableName: 'test'
+    }, )
+    return Test
+}
