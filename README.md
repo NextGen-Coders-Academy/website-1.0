@@ -45,6 +45,8 @@ npm run dev
 
 4. Sequelize: Sequelize is a popular Object-Relational Mapping (ORM) library for Node.js. It provides an abstraction layer on top of the database, allowing developers to interact with the database using JavaScript objects and methods, instead of writing raw SQL queries.
 
+5. EJS (Embedded JavaScript): EJS is a simple and effective template engine for JavaScript. It enables you to embed dynamic content within HTML, making it easier to generate dynamic web pages by injecting data from your application.
+
 ## Project Structure
 - config: Contains configuration file which stores the database configuration.
 - controllers: Handles application logic and interacts with models.
