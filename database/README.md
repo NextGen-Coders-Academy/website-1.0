@@ -21,7 +21,7 @@ This will:
 - Create a model file user in models folder;
 - Create a migration file with name like XXXXXXXXXXXXXX-create-user.js in migrations folder.
 
-#### models/user.js
+### models/user.js
 This file defines the structure of your model and specifies its attributes and data types. It also includes any [associations](https://sequelize.org/docs/v6/core-concepts/assocs/) you define between this model and other models. Here's a breakdown of the contents of the generated model file:
 ```
 'use strict';
@@ -71,7 +71,7 @@ User.init({
 
 You can check out all the data types within the [documentation](https://sequelize.org/docs/v6/core-concepts/model-basics/).
 
-#### migrations/YYYYMMDDHHMMSS-create-user.js
+### migrations/YYYYMMDDHHMMSS-create-user.js
 This migration file is responsible for creating or modifying the database table that corresponds to your model. It defines the columns, data types, constraints, and indexes for the table. Here's a breakdown of the migration file:
 
 ```
