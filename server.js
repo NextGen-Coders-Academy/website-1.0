@@ -7,6 +7,8 @@ const employeeRoutes = require("./routes/employees");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const db = require("./database/models");
+
 // configurations
 app.set("view engine", "ejs");
 
