@@ -2,8 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
-const db = require("./database/models/index");
-const testRoutes = require("./routes/test");
+const employeeRoutes = require("./routes/employees");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,12 +15,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// db sync/refresh, uncomment to refresh db
-// db.sequelize.sync({ force: true }).then(() => {
-//     console.log("db has been re sync")
-// })
-
-app.use('/api', testRoutes);
+app.use('/employees', employeeRoutes) 
 
 // server connection
 app.listen(PORT, () => console.log(`Server is connected on ${PORT}`));
