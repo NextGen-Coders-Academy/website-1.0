@@ -51,6 +51,26 @@ module.exports = (sequelize, DataTypes) => {
 };
 ```
 
+You can add specific fields to each attribute that is being initialized in your model (ie: defaultValue, allowNull, etc.) like so:
+```
+User.init({
+    firstName: {
+        DataTypes.STRING,
+        allowNull: false
+    },
+    lastName: {
+        DataTypes.STRING,
+        allowNull: false
+    },
+    email: {
+        DataTypes.STRING,
+        defaultValue: "troy@dev.com"
+    }
+  }, {
+```
+
+You can check out all the data types within the [documentation](https://sequelize.org/docs/v6/core-concepts/model-basics/).
+
 #### migrations/YYYYMMDDHHMMSS-create-user.js
 This migration file is responsible for creating or modifying the database table that corresponds to your model. It defines the columns, data types, constraints, and indexes for the table. Here's a breakdown of the migration file:
 
