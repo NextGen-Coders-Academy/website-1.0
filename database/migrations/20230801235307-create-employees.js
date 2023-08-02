@@ -21,6 +21,9 @@ module.exports = {
       bio: {
         type: Sequelize.STRING
       },
+      reason: {
+        type: Sequelize.STRING
+      },
       startDate: {
         type: Sequelize.DATE
       },
@@ -30,12 +33,10 @@ module.exports = {
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('NOW') 
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('NOW') 
       }
     });
   },
