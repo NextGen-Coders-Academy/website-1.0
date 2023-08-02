@@ -1,6 +1,5 @@
 const db = require("../database/models/index");
 const Employee = db.employees;
-console.log(db)
 
 async function getAllEmployees(req, res) {
   try {

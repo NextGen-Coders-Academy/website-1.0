@@ -16,7 +16,14 @@ npm install
 
 3. Setup the PostgreSQL database:
    a. Create a new PostgreSQL database for the application.
-   b.  Update the database configuration in the `config/config.js` with your PostgreSQL credentials.
+   b.  Create a `.env` then add the following environment varibles with your PostgreSQL credentials and your port for running the application:
+```
+DB_USERNAME=<your_dbusername>
+DB_PASSWORD=<your_dbpassword>
+DB_NAME=<your_dbname>
+DB_HOST=localhost
+PORT=3000
+```
 
 4. Run the database migration and seed the database:
 ```
