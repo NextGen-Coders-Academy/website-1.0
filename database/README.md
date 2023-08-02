@@ -207,3 +207,10 @@ Or undo all seeds:
 ```
 npx sequelize-cli db:seed:undo:all
 ```
+
+## CRUD Functionality
+Prior to setting up the routes, views, and controllers, add the new model to the database object near the bottom of the `models/index.js` file:
+```
+db.users = require('./user') (sequelize, DataTypes)
+```
+
