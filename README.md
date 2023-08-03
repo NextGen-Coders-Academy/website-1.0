@@ -1,6 +1,7 @@
 # NextGen Coders Academy
 
 ## Description
+Main website for NextGen Coders Academy. Users will be able to read about the bootcamp, sign up for Q&A sessions, look at the course syllabus, read about the instructors, and more!
 
 ## Getting Started
 1. Clone the repository:
@@ -35,6 +36,9 @@ npx sequelize-cli db:seed:all
 ```
 npm run dev
 ```
+
+## ERD
+![ERD](https://raw.githubusercontent.com/NextGen-Coders-Academy/website/boilerplate/assets/NextGen%20Website.drawio.png?token=GHSAT0AAAAAACFCM7HKZLH7M3A6V4ABLO3EZGMEI5Q)
 
 ## Technologies Used
 1. Node.js: Node.js is a server-side JavaScript runtime environment that allows developers to execute JavaScript code outside the web browser. It provides a non-blocking and event-driven architecture, making it suitable for building scalable and efficient server-side applications.
