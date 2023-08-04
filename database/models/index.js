@@ -7,9 +7,9 @@ const process = require('process');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../../config/config.js')[env];
+console.log(config)
 
 const db = {};
-
 
 let sequelize;
 if (config.use_env_variable) {
@@ -49,6 +49,7 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-db.employees = require('./employees') (sequelize, DataTypes)
+db.employees = require('./employee') (sequelize, DataTypes)
+db.prospects = require('./prospect') (sequelize, DataTypes)
 
 module.exports = db;
