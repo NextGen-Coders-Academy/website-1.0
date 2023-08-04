@@ -38,7 +38,7 @@ npm run dev
 ```
 
 ## ERD
-![ERD](https://raw.githubusercontent.com/NextGen-Coders-Academy/website/boilerplate/assets/NextGen%20Website.drawio.png?token=GHSAT0AAAAAACFCM7HKZLH7M3A6V4ABLO3EZGMEI5Q)
+![ERD](assets/NextGen%20Website.drawio.png)
 
 ## Technologies Used
 1. Node.js: Node.js is a server-side JavaScript runtime environment that allows developers to execute JavaScript code outside the web browser. It provides a non-blocking and event-driven architecture, making it suitable for building scalable and efficient server-side applications.
