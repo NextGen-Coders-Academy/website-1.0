@@ -22,7 +22,9 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     date: DataTypes.DATE,
     description: DataTypes.STRING,
-    zoomLink: DataTypes.STRING
+    zoomLink: DataTypes.STRING,
+    recordedLink: DataTypes.STRING,
+    recordedPassword: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Event',

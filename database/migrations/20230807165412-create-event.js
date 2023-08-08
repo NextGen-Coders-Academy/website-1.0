@@ -21,6 +21,12 @@ module.exports = {
       zoomLink: {
         type: Sequelize.STRING
       },
+      recordedLink: {
+        type: Sequelize.STRING
+      },
+      recordedPassword: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
