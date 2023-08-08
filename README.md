@@ -16,7 +16,18 @@ npm install
 ```
 
 3. Setup the PostgreSQL database:
-   a. Create a new PostgreSQL database for the application.
+   a. Create a new PostgreSQL database for the application. For example:
+```
+createdb ngca
+```
+
+or
+
+```
+psql
+CREATE DATABASE ngca;
+\q
+```
    b.  Create a `.env` then add the following environment varibles with your PostgreSQL credentials and your port for running the application:
 ```
 DB_USERNAME=<your_dbusername>
@@ -26,13 +37,13 @@ DB_HOST=localhost
 PORT=3000
 ```
 
-4. Run the database migration and seed the database:
+1. Run the database migration and seed the database:
 ```
 npx sequelize-cli db:migrate
 npx sequelize-cli db:seed:all
 ```
 
-5. Run the application:
+1. Run the application:
 ```
 npm run dev
 ```

@@ -111,9 +111,8 @@ module.exports = {
 };
 ```
 
-Note: The `createdAt` and `updatedAt` fields are auto-generated within the migration. There are multiple ways to set the default timestamp:
+Note: The `createdAt` and `updatedAt` fields are auto-generated within the migration. If a new model is created, a default value for those fields must be set:
 ```
-setting defaultValue in migration file
 ...
 createdAt: {
         allowNull: false,
@@ -125,17 +124,6 @@ createdAt: {
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn('now'),
       }
-```
-
-```
-adding timestamps to model file
-...
-  }, {
-    sequelize,
-    modelName: 'User',
-    timestamps: true,
-  });
-...
 ```
 
 Another Note: Sequelize will only use Model files, it's the table representation. On the other hand, the migration file is a change in that model or more specifically that table, used by CLI. Treat migrations like a commit or a log for some change in database.
@@ -152,8 +140,29 @@ This command will execute these steps:
 - Will ensure a table called SequelizeMeta in database. This table is used to record which migrations have run on the current database
 - Start looking for any migration files which haven't run yet. This is possible by checking SequelizeMeta table. In this case it will run XXXXXXXXXXXXXX-create-user.js migration, which we created in last step.
 - Creates a table called Users with all columns as specified in its migration file.
-  
-To undo the migration, you can revert all the migrations by running:
+
+Check the `psql` shell to confirm that the tables have been created:
+```
+psql <DB_NAME>
+\dt
+```
+The table should look like this:
+```
+             List of relations
+ Schema |     Name      | Type  |  Owner   
+--------+---------------+-------+----------
+ public | SequelizeMeta | table | YOUR_DB_USERNAME
+ public | employees     | table | YOUR_DB_USERNAME
+ public | events        | table | YOUR_DB_USERNAME
+ public | live_sessions | table | YOUR_DB_USERNAME
+ public | prospects     | table | YOUR_DB_USERNAME
+(5 rows)
+```
+
+To quit the shell, execute `\q`.
+
+
+To revert all the migrations, just run:
 ```
 npx sequelize-cli db:migrate:undo
 ```
@@ -201,7 +210,7 @@ npx sequelize-cli db:seed:undo
 ```
 Or a specific seed:
 ```
-npx sequelize-cli db:seed:undo --seed name-of-seed-as-in-data
+npx sequelize-cli db:seed:undo --seed name-of-seed-as-in-data.js
 ```
 Or undo all seeds:
 ```
