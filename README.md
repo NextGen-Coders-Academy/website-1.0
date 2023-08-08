@@ -24,8 +24,14 @@ or
 ```
 psql
 CREATE DATABASE testdb;
+
+-- Note: if you don't remember your username and password, you can create one with the following command:
+CREATE USER your_username WITH PASSWORD 'your_password';
+
+-- to quit the psql shell:
 \q
 ```
+
    b.  Create a `.env` then add the following environment varibles with your PostgreSQL credentials and your port for running the application:
 ```
 DB_USERNAME=<your_dbusername>
