@@ -16,16 +16,14 @@ npm install
 ```
 
 3. Setup the PostgreSQL database:
-   a. Create a new PostgreSQL database for the application. For example:
+   a. Create a new PostgreSQL database for the application. For example, if you want to create a database called `testdb`, go to the terminal and run:
 ```
-createdb ngca
+createdb testdb
 ```
-
 or
-
 ```
 psql
-CREATE DATABASE ngca;
+CREATE DATABASE testdb;
 \q
 ```
    b.  Create a `.env` then add the following environment varibles with your PostgreSQL credentials and your port for running the application:
