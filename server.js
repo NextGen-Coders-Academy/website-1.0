@@ -19,6 +19,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// routes
 app.use("/employees", employeeRoute);
 app.use("/prospects", prospectRoute);
 app.use("/events", eventRoute);

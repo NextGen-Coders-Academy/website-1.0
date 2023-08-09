@@ -1,5 +1,6 @@
 const db = require("../database/models/index");
 const Event = db.events;
+const moment = require('moment'); // datetime conversion for ejs
 
 // postman testing
 async function getAllEvents(req, res) {
@@ -26,7 +27,10 @@ async function getOne(req, res) {
     try {
         const id = req.params.id;
         const event = await Event.findByPk(id);
-        res.render('events/show', { event });
+        res.render('events/show', { 
+            event,
+            moment 
+        });
     } catch (error) {
         console.log(error)
         res.status(404).json({ error: "Event ID not found" });

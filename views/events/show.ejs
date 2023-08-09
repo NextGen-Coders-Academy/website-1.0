@@ -4,6 +4,11 @@
 <body>
     <h1>Single Event Page</h1>
     <%= event.name %>
+    <%= moment(event.date).format('LLLL') %>
+    <%= event.description %>
+    <%= event.zoomLink %>
+    <%= event.recordedLink %>
+    <%= event.recordedPassword %>
 
     <h3>Interested? Join the Conversation!</h3>
     <form action="/prospects" method="POST">
