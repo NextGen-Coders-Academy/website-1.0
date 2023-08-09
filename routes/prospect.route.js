@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const prospectController = require("../controllers/prospect.controller");
+const { prospectController } = require("../controllers");
 
 // postman testing
 router.get("/api", prospectController.getAll);

@@ -1,6 +1,11 @@
 const db = require("../database/models/index");
 const Employee = db.employees;
 
+module.exports = {
+  getAllEmployees,
+  getAll,
+};
+
 // postman testing
 async function getAllEmployees(req, res) {
   try {
@@ -35,8 +40,3 @@ async function createEmployee(req, res) {
   }
 }
 */
-
-module.exports = {
-  getAllEmployees,
-  getAll,
-};

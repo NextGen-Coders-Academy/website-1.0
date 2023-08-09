@@ -1,6 +1,12 @@
 const db = require("../database/models/index");
 const Prospect = db.prospects;
 
+module.exports = {
+  getAllProspects,
+  getAll,
+  create
+};
+
 // postman testing
 async function getAllProspects(req, res) {
   try {
@@ -36,9 +42,3 @@ async function create(req, res) {
     res.status(500).json({ error: "Could not create prospect." });
   }
 }
-
-module.exports = {
-  getAllProspects,
-  getAll,
-  create
-};

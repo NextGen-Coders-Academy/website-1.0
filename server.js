@@ -7,9 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // routes
-const employeeRoute = require('./routes/employee.route');
-const prospectRoute = require('./routes/prospect.route');
-const eventRoute = require('./routes/event.route');
+const routes = require('./routes');
 
 // configurations
 app.set("view engine", "ejs");
@@ -20,9 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // routes
-app.use("/employees", employeeRoute);
-app.use("/prospects", prospectRoute);
-app.use("/events", eventRoute);
+app.use("/", routes);
 
 // server connection
 app.listen(PORT, () => console.log(`Server is connected on ${PORT}`));

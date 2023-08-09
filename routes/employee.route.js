@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const employeeController = require("../controllers/employee.controller");
+const { employeeController } = require("../controllers");
 
 // postman testing
 router.get("/api", employeeController.getAllEmployees);

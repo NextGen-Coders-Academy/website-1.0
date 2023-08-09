@@ -2,6 +2,12 @@ const db = require("../database/models/index");
 const Event = db.events;
 const moment = require('moment'); // datetime conversion for ejs
 
+module.exports = {
+    getAllEvents,
+    getAll,
+    getOne,
+};
+
 // postman testing
 async function getAllEvents(req, res) {
     try {
@@ -36,9 +42,3 @@ async function getOne(req, res) {
         res.status(404).json({ error: "Event ID not found" });
     }
 }
-
-module.exports = {
-    getAllEvents,
-    getAll,
-    getOne,
-  };
