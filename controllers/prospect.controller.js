@@ -1,6 +1,7 @@
 const db = require("../database/models/index");
 const Prospect = db.prospects;
 
+// postman testing
 async function getAllProspects(req, res) {
   try {
     const prospects = await Prospect.findAll();
@@ -13,11 +14,11 @@ async function getAllProspects(req, res) {
 }
 
 
-async function prospectIndex(req, res) {
+async function getAll(req, res) {
   try {
     const prospects = await Prospect.findAll();
     console.log(prospects)
-    res.render('prospects', {prospects: prospects});
+    res.render('prospects', { prospects });
   } catch (error) {
     console.log(error)
     res.status(500).json({ error: "Could not fetch prospects." });
@@ -25,11 +26,11 @@ async function prospectIndex(req, res) {
 }
 
 
-async function createProspect(req, res) {
+async function create(req, res) {
   try {
     const { firstName, lastName, email, location, bio, status } = req.body;
     const newProspect = await Prospect.create({ firstName, lastName, email, location, bio, status });
-    res.status(201).json(newProspect);
+    return res.redirect('/events');
   } catch (error) {
     console.error("Error creating prospect:", error);
     res.status(500).json({ error: "Could not create prospect." });
@@ -37,8 +38,7 @@ async function createProspect(req, res) {
 }
 
 module.exports = {
-  // createTest,
-  prospectIndex,
   getAllProspects,
-  createProspect
+  getAll,
+  create
 };

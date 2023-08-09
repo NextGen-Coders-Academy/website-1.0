@@ -1,6 +1,7 @@
 const db = require("../database/models/index");
 const Employee = db.employees;
 
+// postman testing
 async function getAllEmployees(req, res) {
   try {
     const employees = await db.employees.findAll();
@@ -11,8 +12,7 @@ async function getAllEmployees(req, res) {
   }
 }
 
-
-async function employeeIndex(req, res) {
+async function getAll(req, res) {
   try {
     const employees = await Employee.findAll();
     console.log(employees)
@@ -37,7 +37,6 @@ async function createEmployee(req, res) {
 */
 
 module.exports = {
-  // createTest,
-  employeeIndex,
-  getAllEmployees
+  getAllEmployees,
+  getAll,
 };

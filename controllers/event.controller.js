@@ -1,6 +1,17 @@
 const db = require("../database/models/index");
 const Event = db.events;
 
+// postman testing
+async function getAllEvents(req, res) {
+    try {
+        const events = await Event.findAll();
+        res.json(events);
+    } catch (error) {
+        console.error("Error fetching tests:", error);
+        res.status(500).json({ error: "Could not fetch events." });
+    }
+}
+
 async function getAll(req, res) {
     try {
         const events = await Event.findAll();
@@ -22,19 +33,8 @@ async function getOne(req, res) {
     }
 }
 
-// postman testing
-async function getAllEvents(req, res) {
-    try {
-        const events = await Event.findAll();
-        res.json(events);
-    } catch (error) {
-        console.error("Error fetching tests:", error);
-        res.status(500).json({ error: "Could not fetch events." });
-    }
-}
-
 module.exports = {
+    getAllEvents,
     getAll,
     getOne,
-    getAllEvents
   };
