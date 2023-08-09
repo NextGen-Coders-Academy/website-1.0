@@ -2,30 +2,33 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('prospects', {
+    await queryInterface.createTable('live_sessions', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      firstName: {
-        type: Sequelize.STRING
+      prospectId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'prospects',
+          key: 'id',
+          as: 'prospectId'
+        }
       },
-      lastName: {
-        type: Sequelize.STRING
+      eventId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'events',
+          key: 'id',
+          as: 'eventId'
+        }
       },
-      email: {
-        type: Sequelize.STRING
-      },
-      location: {
-        type: Sequelize.STRING
-      },
-      bio: {
-        type: Sequelize.STRING
-      },
-      status: {
-        type: Sequelize.STRING
+      isPresent: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
@@ -40,6 +43,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('prospects');
+    await queryInterface.dropTable('live_sessions');
   }
 };

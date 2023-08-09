@@ -11,6 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Prospect.belongsToMany(models.Event, { 
+        through: models.liveSession,
+        foreignKey: 'prospectId',
+        otherKey: 'eventId' 
+      });
+      Prospect.hasMany(models.liveSession);
     }
   }
   Prospect.init({
@@ -24,7 +30,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Prospect',
     tableName: 'prospects',
-    timestamps: true,
   });
   return Prospect;
 };

@@ -51,5 +51,7 @@ db.Sequelize = Sequelize;
 
 db.employees = require('./employee') (sequelize, DataTypes)
 db.prospects = require('./prospect') (sequelize, DataTypes)
+db.events = require('./event') (sequelize, DataTypes)
+db.liveSessions = require('./live_session') (sequelize, DataTypes)
 
 module.exports = db;
