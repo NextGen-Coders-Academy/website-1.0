@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+<body>
+    <h3>All Events:</h3>
+    <% events.forEach(function(event) { %>
+        <p><%= event.name %></p>
+        <a class="button" href="/events/<%= event.id %>">Go To Event!</a>
+    <% }) %>
+</body>
+</html>

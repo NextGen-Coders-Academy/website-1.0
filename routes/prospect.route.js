@@ -1,9 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const prospectController = require("../controllers/prospect.controller");
+const { prospectController } = require("../controllers");
 
-router.get("/", prospectController.prospectIndex);
-router.get("/api", prospectController.getAllProspects);
-router.post("/create", prospectController.createProspect);
+// postman testing
+router.get("/api", prospectController.getAll);
+
+// GET /prospects
+router.get("/", prospectController.getAllProspects);
+
+// POST /prospects/create
+router.post("/", prospectController.create);
 
 module.exports = router;

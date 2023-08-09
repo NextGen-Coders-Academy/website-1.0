@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Event.belongsToMany(models.Event, { 
+      Event.belongsToMany(models.Prospect, { 
         through: models.liveSession,
         foreignKey: 'eventtId',
         otherKey: 'prospectId'  

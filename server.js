@@ -7,8 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // routes
-const employeeRoute = require('./routes/employee.route');
-const prospectRoute = require('./routes/prospect.route');
+const routes = require('./routes');
 
 // configurations
 app.set("view engine", "ejs");
@@ -18,8 +17,8 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/employees", employeeRoute);
-app.use("/prospects", prospectRoute);
+// routes
+app.use("/", routes);
 
 // server connection
 app.listen(PORT, () => console.log(`Server is connected on ${PORT}`));
