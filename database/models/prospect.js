@@ -11,12 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Prospect.belongsToMany(models.Event, { 
+      Prospect.belongsToMany(models.Event, {
         through: models.liveSession,
-        foreignKey: 'prospectId',
-        otherKey: 'eventId' 
+        as: "events",
+        foreignKey: "prospectId"
       });
-      Prospect.hasMany(models.liveSession);
     }
   }
   Prospect.init({

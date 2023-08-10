@@ -11,12 +11,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      liveSession.belongsTo(models.Event, {foreignKey: 'eventId'});
-      liveSession.belongsTo(models.Prospect, {foreignKey: 'prospectId'});
+      // liveSession.belongsTo(models.Event);
+      // liveSession.belongsTo(models.Prospect);
     }
   }
   liveSession.init({
-    isPresent: DataTypes.BOOLEAN
+    isPresent: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
   }, {
     sequelize,
     modelName: 'liveSession',

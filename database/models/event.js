@@ -10,12 +10,11 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Event.belongsToMany(models.Prospect, { 
+      Event.belongsToMany(models.Prospect, {
         through: models.liveSession,
-        foreignKey: 'eventtId',
-        otherKey: 'prospectId'  
+        as: "prospects",
+        foreignKey: "eventId"
       });
-      Event.hasMany(models.liveSession);
     }
   }
   Event.init({
