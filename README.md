@@ -41,13 +41,15 @@ DB_HOST=localhost
 PORT=3000
 ```
 
-1. Run the database migration and seed the database:
+4. Run the database migration and seed the database:
 ```
 npx sequelize-cli db:migrate
 npx sequelize-cli db:seed:all
 ```
 
-1. Run the application:
+
+
+5. Run the application:
 ```
 npm run dev
 ```

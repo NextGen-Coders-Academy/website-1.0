@@ -14,7 +14,6 @@ async function getAllProspects(req, res) {
   try {
     const prospects = await Prospect.findAll();
     event_one = await Event.findByPk(1)
-    console.log(Prospect.addEvent(event_one, {through: liveSession}))
     res.json(prospects);
   } catch (error) {
     console.error("Error fetching tests:", error);
