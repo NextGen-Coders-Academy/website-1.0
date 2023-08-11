@@ -21,8 +21,8 @@ module.exports = {
       bio: {
         type: Sequelize.STRING
       },
-      reason: {
-        type: Sequelize.STRING
+      image: {
+        type: Sequelize.BLOB
       },
       startDate: {
         type: Sequelize.DATE
