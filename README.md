@@ -41,19 +41,21 @@ DB_HOST=localhost
 PORT=3000
 ```
 
-1. Run the database migration and seed the database:
+4. Run the database migration and seed the database:
 ```
 npx sequelize-cli db:migrate
 npx sequelize-cli db:seed:all
 ```
 
-1. Run the application:
+
+
+5. Run the application:
 ```
 npm run dev
 ```
 
 ## ERD
-![ERD](assets/NextGen%20Website.drawio.png)
+![ERD](assets/NextGenWebsiteErd.png)
 
 ## Technologies Used
 1. Node.js: Node.js is a server-side JavaScript runtime environment that allows developers to execute JavaScript code outside the web browser. It provides a non-blocking and event-driven architecture, making it suitable for building scalable and efficient server-side applications.
