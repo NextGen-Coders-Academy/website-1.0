@@ -13,7 +13,6 @@ module.exports = {
 async function getAllProspects(req, res) {
   try {
     const prospects = await Prospect.findAll();
-    event_one = await Event.findByPk(1)
     res.json(prospects);
   } catch (error) {
     console.error("Error fetching tests:", error);
@@ -48,17 +47,3 @@ async function create(req, res) {
     res.status(500).json({ error: "Could not create prospect." });
   }
 }
-
-// async function create(req, res) {
-//   try {
-//     const prospectId = 1
-//     const eventId = 2
-//     const newLiveSession = await liveSession.create({ prospectId, eventId })
-    
-//     console.log(newLiveSession);
-//     return res.redirect('/events');
-//   } catch (error) {
-//     console.error("Error creating prospect:", error);
-//     res.status(500).json({ error: "Could not create prospect." });
-//   }
-// }

@@ -1,5 +1,6 @@
 const db = require("../database/models");
 const Course = db.Course;
+const moment = require('moment'); // datetime conversion for ejs
 
 module.exports = {
   getAllCourses,
