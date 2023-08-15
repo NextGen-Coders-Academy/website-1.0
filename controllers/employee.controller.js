@@ -9,7 +9,7 @@ module.exports = {
 // postman testing
 async function getAllEmployees(req, res) {
   try {
-    const employees = await db.employees.findAll();
+    const employees = await Employee.findAll();
     res.json(employees);
   } catch (error) {
     console.error("Error fetching tests:", error);
