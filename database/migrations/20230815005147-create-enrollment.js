@@ -9,6 +9,33 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      courseId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'courses',
+          key: 'id',
+          as: 'courseId'
+        }
+      },
+      employeeId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'employees',
+          key: 'id',
+          as: 'employeeId'
+        }
+      },
+      studentId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'students',
+          key: 'id',
+          as: 'studentId'
+        }
+      },
       enrollmentDate: {
         type: Sequelize.DATE
       },
