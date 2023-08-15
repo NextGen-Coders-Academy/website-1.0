@@ -12,13 +12,13 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Course.belongsToMany(models.Employee, {
-        through: models.employee,
-        as: "enrollments",
+        through: models.Enrollment,
+        as: "employees",
         foreignKey: "courseId"
       });
       Course.belongsToMany(models.Student, {
-        through: models.student,
-        as: "enrollments",
+        through: models.Enrollment,
+        as: "students",
         foreignKey: "courseId"
       });
     }
@@ -34,6 +34,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Course',
+    tableName: 'courses',
   });
   return Course;
 };
