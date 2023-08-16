@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+<body>
+    <h3>All Courses:</h3>
+    <% courses.forEach(function(course) { %>
+        <p><%= course.name %></p>
+        <a class="button" href="/courses/<%= course.id %>">Go To Course!</a>
+    <% }) %>
+</body>
+</html>
