@@ -42,10 +42,8 @@ module.exports = (sequelize, DataTypes) => {
       isEmail: true,
       allowNull: false,
       validate: {
-        customValidator(value) {
-          if (value === null || ) {
-            throw new Error("name can't be null unless age is 10");
-          }
+        notNull: {
+          msg: 'Please enter your email'
         }
       }
     },

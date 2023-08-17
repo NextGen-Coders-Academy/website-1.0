@@ -21,16 +21,31 @@ module.exports = (sequelize, DataTypes) => {
   Student.init({
     firstName: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Please enter your first name'
+        }
+      }
     },
     lastName: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Please enter your last name'
+        }
+      }
     },
     email: {
       type: DataTypes.STRING,
       isEmail: true,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Please enter your email'
+        }
+      }
     },
     location: DataTypes.STRING,
     bio: DataTypes.STRING
