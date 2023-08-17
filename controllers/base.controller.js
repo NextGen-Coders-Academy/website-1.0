@@ -14,7 +14,7 @@ async function home(req, res) {
         const employees = await Employee.findAll();
         const courses = await Course.findAll();
         const events = await Event.findAll({ limit: 1, order: [['date', 'ASC']]});
-        res.render('home', {
+        res.render('home/index', {
             employees,
             courses,
             events,
