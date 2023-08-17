@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     email: {
       type: DataTypes.STRING,
-      isEmail: true,
+      isEmail: true, // supposed to check email format (foo@bar.com), doesn't appear to work...
       allowNull: false,
       validate: {
         notNull: {

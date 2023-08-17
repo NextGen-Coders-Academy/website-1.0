@@ -20,7 +20,6 @@ async function getAllEmployees(req, res) {
 async function getAll(req, res) {
   try {
     const employees = await Employee.findAll();
-    console.log(employees)
     res.render('employees', {employees: employees});
   } catch (error) {
     console.log(error)

@@ -1,0 +1,6 @@
+<h1>Upcoming Cohorts</h1>
+<% courses.forEach(function(course) { %>
+    <p><%= course.name %></p>
+    <p><%= course.date %></p>
+    <a class="button" href="/courses/<%= course.id %>">Go To Course!</a>
+<% }) %>

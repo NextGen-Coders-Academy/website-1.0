@@ -17,7 +17,6 @@ if (config.use_env_variable) {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
-
 sequelize.authenticate().then(() => {
   console.log('Connection has been established successfully.');
 }).catch (error => {
