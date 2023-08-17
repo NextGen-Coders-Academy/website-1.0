@@ -19,9 +19,19 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Prospect.init({
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
-    email: DataTypes.STRING,
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    email: {
+      type: DataTypes.STRING,
+      isEmail: true,
+      allowNull: false
+    },
     location: DataTypes.STRING,
     bio: DataTypes.STRING,
     status: {

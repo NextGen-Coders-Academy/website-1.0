@@ -37,7 +37,8 @@ module.exports = {
         }
       },
       enrollmentDate: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now')
       },
       certificateUrl: {
         type: Sequelize.STRING

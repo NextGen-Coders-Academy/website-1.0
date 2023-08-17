@@ -18,8 +18,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Event.init({
-    name: DataTypes.STRING,
-    date: DataTypes.DATE,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    date: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
     description: DataTypes.STRING,
     zoomLink: DataTypes.STRING,
     recordedLink: DataTypes.STRING,

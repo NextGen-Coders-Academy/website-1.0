@@ -24,13 +24,22 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Course.init({
-    name: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     description: DataTypes.STRING,
     startDate: DataTypes.DATE,
     endDate: DataTypes.DATE,
     hours: DataTypes.INTEGER,
-    isFullTime: DataTypes.BOOLEAN,
-    courseType: DataTypes.STRING
+    isFullTime: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
+    },
+    courseType: {
+      type: DataTypes.STRING,
+      defaultValue: 'online'
+    }
   }, {
     sequelize,
     modelName: 'Course',
