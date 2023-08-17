@@ -31,7 +31,11 @@ module.exports = (sequelize, DataTypes) => {
     bio: DataTypes.STRING,
     image: DataTypes.BLOB,
     startDate: DataTypes.DATE,
-    endDate: DataTypes.DATE
+    endDate: DataTypes.DATE,
+    isHidden: {
+      type: DataTypes.Boolean,
+      defaultValue: true
+    }
   }, {
     sequelize,
     modelName: 'Employee',

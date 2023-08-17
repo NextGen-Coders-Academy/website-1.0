@@ -21,16 +21,33 @@ module.exports = (sequelize, DataTypes) => {
   Prospect.init({
     firstName: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Please enter your first name'
+        }
+      }
     },
     lastName: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Please enter your last name'
+        }
+      }
     },
     email: {
       type: DataTypes.STRING,
       isEmail: true,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        customValidator(value) {
+          if (value === null || ) {
+            throw new Error("name can't be null unless age is 10");
+          }
+        }
+      }
     },
     location: DataTypes.STRING,
     bio: DataTypes.STRING,
