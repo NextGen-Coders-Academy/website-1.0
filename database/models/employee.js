@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     startDate: DataTypes.DATE,
     endDate: DataTypes.DATE,
     isHidden: {
-      type: DataTypes.Boolean,
+      type: DataTypes.BOOLEAN,
       defaultValue: true
     }
   }, {

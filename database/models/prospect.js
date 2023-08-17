@@ -41,11 +41,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       isEmail: true,
       allowNull: false,
+      /* for later
       validate: {
-        notNull: {
-          msg: 'Please enter your email'
+        customValidator(value) {
+          if (value === null || value === "") {
+            throw new Error("Please enter your email");
+          }
         }
       }
+      */
     },
     location: DataTypes.STRING,
     bio: DataTypes.STRING,

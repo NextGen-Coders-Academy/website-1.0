@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
+        // note: empty form fields return an empty string (which is not null), catch validator here or in the controller?
         notNull: {
           msg: 'Please enter your first name'
         }
