@@ -2,6 +2,7 @@
 <html lang="en">
     <%- include('../partials/head') %>
 <body>
+    <%- include('../partials/nav') %>
     <h1>Single Event Page</h1>
     <%= event.name %>
     <%= moment(event.date).format('LLLL') %>

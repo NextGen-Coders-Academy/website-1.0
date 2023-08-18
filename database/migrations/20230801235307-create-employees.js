@@ -30,6 +30,9 @@ module.exports = {
       endDate: {
         type: Sequelize.DATE
       },
+      isHidden: {
+        type: Sequelize.BOOLEAN
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

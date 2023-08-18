@@ -19,9 +19,35 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Student.init({
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
-    email: DataTypes.STRING,
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        // note: empty form fields return an empty string (which is not null), catch validator here or in the controller?
+        notNull: {
+          msg: 'Please enter your first name'
+        }
+      }
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Please enter your last name'
+        }
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      isEmail: true, // supposed to check email format (foo@bar.com), doesn't appear to work...
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Please enter your email'
+        }
+      }
+    },
     location: DataTypes.STRING,
     bio: DataTypes.STRING
   }, {

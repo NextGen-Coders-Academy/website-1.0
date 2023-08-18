@@ -35,10 +35,17 @@ async function getAll(req, res) {
 async function create(req, res) {
   try {
     const { firstName, lastName, email, location, bio, status } = req.body;
-    let { eventId } = req.body;
-    eventId = parseInt(eventId)
+    let eventId = parseInt(req.body.eventId) ? req.body.eventId : null
+    console.log('-------------EVENT ID------------')
+    console.log(eventId)
+    console.log('-------------EVENT ID------------')
+    
+    // eventId = parseInt(eventId)
     const newProspect = await Prospect.create({ firstName, lastName, email, location, bio, status });
-    const event = await Event.findByPk(eventId);
+    const event = await Event.findByPk(eventId) ? eventId : await Event.findOne() 
+    console.log('-------------EVENT------------')
+    console.log(event)
+    console.log('-------------EVENT------------')
     newProspect.addEvent(event)
     
     return res.redirect('/events');

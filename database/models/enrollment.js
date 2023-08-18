@@ -17,7 +17,10 @@ module.exports = (sequelize, DataTypes) => {
     enrollmentDate: DataTypes.DATE,
     certificateUrl: DataTypes.STRING,
     certificateId: DataTypes.STRING,
-    isCurrent: DataTypes.BOOLEAN
+    isCurrent: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Enrollment',
