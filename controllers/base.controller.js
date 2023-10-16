@@ -6,7 +6,8 @@ const moment = require('moment'); // datetime conversion for ejs
 
 module.exports = {
     home,
-    about
+    about,
+    faq
 }
 
 async function home(req, res) {
@@ -32,5 +33,14 @@ async function about(req, res) {
     } catch (error) {
         console.log(error)
         res.status(500).json({ error: "About route not working" });
+    }
+}
+
+async function faq(req, res) {
+    try {
+        res.render('faq');
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ error: "FAQ route not working" });
     }
 }
