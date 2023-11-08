@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "style": "postcss public/css/tailwind.css -o public/css/style.css"
   },
   "repository": {
     "type": "git",

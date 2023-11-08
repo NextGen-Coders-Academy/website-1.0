@@ -3,10 +3,16 @@
     <%- include('../partials/head') %>
 <body>
     <%- include('../partials/nav') %>
-    <h1>Home Page</h1>
-    <%- include('./partials/employees') %>
-    <%- include('./partials/courses') %>
-    <%- include('./partials/prospects') %>
+    <div class="pt-[80px] px-4 md:px-10">
+        <div class="pt-[20px] lg:w-[950px] lg:mx-auto">
+            <%- include('./partials/top_content') %>
+            <%- include('./partials/logo') %>
+            <%- include('./partials/employees') %>
+            <%- include('./partials/courses') %>
+            <%- include('./partials/prospects') %>
+            <%- include('./partials/bottom_content') %>
+        </div>
+    </div>
     <%- include('../partials/footer') %>
 </body>
 </htm>
