@@ -1,62 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-    <%- include('../partials/head') %>
-<body>
-    <%- include('../partials/nav') %>
-    <h1>Single Event Page</h1>
-    <%= event.name %>
-    <%= moment(event.date).format('LLLL') %>
-    <%= event.description %>
-    <%= event.zoomLink %>
-    <%= event.recordedLink %>
-    <%= event.recordedPassword %>
+<%- include('../partials/head') %>
+<h1>Single Event Page</h1>
+<%= event.name %>
+<%= moment(event.date).format('LLLL') %>
+<%= event.description %>
+<%= event.zoomLink %>
+<%= event.recordedLink %>
+<%= event.recordedPassword %>
 
-    <h3>Interested? Join the Conversation!</h3>
-    <form action="/prospects" method="POST">
-        <div>
-            <label for="firstName">First Name</label>
-            <input
-                type="text"
-                name="firstName"
-                id="firstName"
-            />
-        </div>
-        <div>
-            <label for="lastName">Last Name</label>
-            <input
-                type="text"
-                name="lastName"
-                id="lastName"
-            />
-        </div>
-        <div>
-            <label for="email">Email</label>
-            <input
-                type="text"
-                name="email"
-                id="email"
-            />
-        </div>
-        <div>
-            <label for="location">Location</label>
-            <input
-                type="text"
-                name="location"
-                id="location"
-            />
-        </div>
-        <div>
-            <label for="bio">Tell us a bit about yourself</label>
-            <textarea
-                type="text"
-                name="bio"
-                id="bio"
-                rows="10"
-            ></textarea>
-        </div>
-        <input type="hidden" id="eventId" name="eventId" value="<%= event.id %>" />
-        <button class="button is-info">Sign Up!</button>
-    </form>
-    <a class="button" href="/events">Back To All Events</a>
-</body>
-</html>
+<h3>Interested? Join the Conversation!</h3>
+<form action="/prospects" method="POST">
+    <div>
+        <label for="firstName">First Name</label>
+        <input
+            type="text"
+            name="firstName"
+            id="firstName"
+        />
+    </div>
+    <div>
+        <label for="lastName">Last Name</label>
+        <input
+            type="text"
+            name="lastName"
+            id="lastName"
+        />
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input
+            type="text"
+            name="email"
+            id="email"
+        />
+    </div>
+    <div>
+        <label for="location">Location</label>
+        <input
+            type="text"
+            name="location"
+            id="location"
+        />
+    </div>
+    <div>
+        <label for="bio">Tell us a bit about yourself</label>
+        <textarea
+            type="text"
+            name="bio"
+            id="bio"
+            rows="10"
+        ></textarea>
+    </div>
+    <input type="hidden" id="eventId" name="eventId" value="<%= event.id %>" />
+    <button class="button is-info">Sign Up!</button>
+</form>
+<a class="button" href="/events">Back To All Events</a>
