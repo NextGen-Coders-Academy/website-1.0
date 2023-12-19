@@ -8,49 +8,73 @@
 <%= event.recordedPassword %>
 
 <h3>Interested? Join the Conversation!</h3>
-<form action="/prospects" method="POST">
-    <div>
-        <label for="firstName">First Name</label>
-        <input
-            type="text"
-            name="firstName"
-            id="firstName"
-        />
+<div class="h-screen flex items-center justify-center">
+    <div class="w-full max-w-xs">
+        <form action="/prospects" method="POST" class="w-full max-w-lg">
+            <div class="flex flex-wrap -mx-3 mb-6">
+                <div>
+                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="firstName">
+                        First Name
+                    </label>
+                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane"
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                    />
+                </div>
+                <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="lastName">
+                        Last Name
+                    </label>
+                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Doe"
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                    />
+                </div>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-6">
+                <div>
+                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="email">
+                        Email
+                    </label>
+                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="jane.doe@email.com"
+                        type="text"
+                        name="email"
+                        id="email"
+                    />
+                    </div>
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="location">
+                            Location
+                        </label>
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Doe"
+                            type="text"
+                            name="location"
+                            id="location"
+                        />
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="bio">Bio</label>
+                    <textarea
+                        type="text"
+                        name="bio"
+                        id="bio"
+                        rows="10"
+                        placeholder="Tell us a bit about yourself"
+                    ></textarea>
+                </div>
+                <input type="hidden" id="eventId" name="eventId" value="<%= event.id %>" />
+                <button class="button is-info">Sign Up!</button>
+            </form>
+            <div>
+                <a class="button" href="/events">Back To All Events</a>
+            </div>
+        </div>
     </div>
-    <div>
-        <label for="lastName">Last Name</label>
-        <input
-            type="text"
-            name="lastName"
-            id="lastName"
-        />
-    </div>
-    <div>
-        <label for="email">Email</label>
-        <input
-            type="text"
-            name="email"
-            id="email"
-        />
-    </div>
-    <div>
-        <label for="location">Location</label>
-        <input
-            type="text"
-            name="location"
-            id="location"
-        />
-    </div>
-    <div>
-        <label for="bio">Tell us a bit about yourself</label>
-        <textarea
-            type="text"
-            name="bio"
-            id="bio"
-            rows="10"
-        ></textarea>
-    </div>
-    <input type="hidden" id="eventId" name="eventId" value="<%= event.id %>" />
-    <button class="button is-info">Sign Up!</button>
-</form>
-<a class="button" href="/events">Back To All Events</a>
+</div>

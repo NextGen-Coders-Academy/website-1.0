@@ -1,161 +1,165 @@
 .bg-custom-image {
-    background-image: url('../../images/unsplash_UZe35tk5UoA.png');
-    background-size: cover;
-    background-position: center;
-  
-  }
+  background-image: url('../../images/unsplash_UZe35tk5UoA.png');
+  background-size: cover;
+  background-position: center;
+}
 
-  /* --------------------- HEADER CSS --------------------- */
-  
-  .header {
-    background-color: var(--black);
-    position: fixed;
-    top: 0;
-    z-index: 4;
-    height: 70px;
-    width: 100%;
-    vertical-align: middle;
-    display: flex;
-  }
-  
-  .header-content {
-    position: relative;
+/* --------------------- HEADER CSS --------------------- */
+
+.header {
+  background-color: var(--black);
+  position: fixed;
+  top: 0;
+  z-index: 4;
+  height: 70px;
+  width: 100%;
+  vertical-align: middle;
+  display: flex;
+}
+
+.header-content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px 5px 20px;
+  width: 100%;
+}
+
+.header img {
+  object-fit: contain;
+  height: 50px;
+  margin-bottom: 2px;
+  margin-top: 10px;
+}
+
+.menu {
+  position: absolute;
+  top: 70px;
+  height: 0px;
+  overflow-y: hidden;
+  background-color: var(--hamburgerBg);
+  width: 100%;
+  transition-property: height;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
+
+.menu.active {
+  height: 100vh;
+  color: var(--black);
+}
+
+.nav-flex{
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  padding: 10px 5px;
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+  opacity: 1;
+  font-size: 18px;
+  text-align: center;
+}
+
+
+.nav-item-signup {
+  padding: 10px 5px;
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+  opacity: 1;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* --------------------- HAMBURGER CSS --------------------- */
+
+.hamburger{
+  cursor: pointer;
+}
+
+.hamburger span{
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: var(--white);
+  margin: 8px 0px;
+  transition: var(--transition);
+}
+
+.hamburger.active span:nth-of-type(1) {
+  transform: rotate(45deg) translateX(13px) translateY(-2px);
+  margin:-9px;
+}
+
+.hamburger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-of-type(3) {
+  transform: rotate(-45deg) translateX(6px) translateY(9px);
+  margin:-9px;
+}
+
+/* --------------------- FULL SCREEN NAV CSS --------------------- */
+
+@media all and (min-width: 940px) {
+
+  .menu {
+    position: static;
+    height: auto;
+    overflow-y: visible;
+    background-color: transparent;
+    padding: 5px 20px 5px 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 20px 5px 20px;
-    width: 100%;
-  }
-  
-  .header img {
-    object-fit: contain;
-    height: 50px;
-    margin-bottom: 2px;
-    margin-top: 10px;
-  }
-  
-  .menu {
-    position: absolute;
-    top: 70px;
-    height: 0px;
-    overflow-y: hidden;
-    background-color: var(--hamburgerBg);
-    width: 100%;
-    transition-property: height;
-    transition-duration: 0.3s;
-    transition-timing-function: linear;
-  }
-  
-  .menu.active {
-    height: 100vh;
-    color: var(--black);
   }
   
   .nav-flex{
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
+  }
+
+  .header-content{
+    width: 150px;
+    padding: 5px 30px 5px 40px;
+    justify-content: center;
+  }
+
+  .hamburger {
+    display: none;
   }
   
   .nav-item {
-    padding: 10px 5px;
-    background-color: var(--white);
-    border: 1px solid var(--gray);
-    opacity: 1;
-    font-size: 18px;
-    text-align: center;
+    border: none;
+    background-color: transparent;
+    padding: 10px 10px 10px 10px;
   }
-  
-  
+
   .nav-item-signup {
-    padding: 10px 5px;
-    background-color: var(--white);
-    border: 1px solid var(--gray);
-    opacity: 1;
-    font-size: 18px;
-    text-align: center;
+    border: none;
+    background-color: transparent;
+    padding: 10px 30px 10px 46px;
   }
-  
-  /* --------------------- HAMBURGER CSS --------------------- */
-  
-  .hamburger{
-    cursor: pointer;
+
+  .nav-item-a {
+    color: var(--white);
   }
-  
-  .hamburger span{
-    display: block;
-    width: 50px;
-    height: 4px;
-    background-color: var(--white);
-    margin: 8px 0px;
-    transition: var(--transition);
+
+  .menu.active {
+    height: 80px;
   }
-  
-  .hamburger.active span:nth-of-type(1) {
-    transform: rotate(45deg) translateX(13px) translateY(-2px);
-    margin:-9px;
-  }
-  
-  .hamburger.active span:nth-of-type(2) {
-    opacity: 0;
-  }
-  
-  .hamburger.active span:nth-of-type(3) {
-    transform: rotate(-45deg) translateX(6px) translateY(9px);
-    margin:-9px;
-  }
-  
-  /* --------------------- FULL SCREEN NAV CSS --------------------- */
-  
-  @media all and (min-width: 940px) {
-  
-    .menu {
-      position: static;
-      height: auto;
-      overflow-y: visible;
-      background-color: transparent;
-      padding: 5px 20px 5px 20px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .nav-flex{
-      flex-direction: row;
-    }
-  
-    .header-content{
-      width: 150px;
-      padding: 5px 30px 5px 40px;
-      justify-content: center;
-    }
-  
-    .hamburger {
-      display: none;
-    }
-   
-    .nav-item {
-      border: none;
-      background-color: transparent;
-      padding: 10px 10px 10px 10px;
-    }
-  
-    .nav-item-signup {
-      border: none;
-      background-color: transparent;
-      padding: 10px 30px 10px 46px;
-    }
-  
-    .nav-item-a {
-      color: var(--white);
-    }
-  
-    .menu.active {
-      height: 80px;
-    }
-    
-    
 }
+
+/* --------------------- Info Session CSS --------------------- */
+.event-card {
+  border: 0.5px solid white;
+  height: 50%;
+  width: 50%;
+  padding: 1em;
   
-  
+}
