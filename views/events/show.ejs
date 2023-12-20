@@ -55,6 +55,9 @@
                     <textarea class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="bio" name="bio"  rows="10" type="text" placeholder="Tell us a bit about yourself"></textarea>
                 </div>
             </div>
+            <input type="hidden" id="eventId" name="eventId" value="<%= event.id %>" />
+            <button class="btn is-info">Sign Up!</button>
         </form>
+        <a class="button" href="/events">Back To All Events</a>
     </div>
 </div>
