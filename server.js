@@ -1,6 +1,7 @@
 // dependencies
 const express = require("express");
 const bodyParser = require("body-parser");
+const path = require("path")
 const dotenv = require("dotenv");
 
 const app = express();
@@ -13,7 +14,7 @@ const routes = require('./routes');
 app.set("view engine", "ejs");
 
 // middleware
-app.use(express.static("public"));
+app.use(express.static('public'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

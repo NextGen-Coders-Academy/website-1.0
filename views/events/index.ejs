@@ -1,12 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-    <%- include('../partials/head') %>
-<body>
-    <%- include('../partials/nav') %>
-    <h3>All Events:</h3>
-    <% events.forEach(function(event) { %>
-        <p><%= event.name %></p>
-        <a class="button" href="/events/<%= event.id %>">Go To Event!</a>
-    <% }) %>
-</body>
-</html>
+<%- include('../partials/head') %>
+<h1>All Events</h1>
+<img class="w-3" src="/images/chris-montgomery-smgTvepind4-unsplash.jpg" alt="Sunset in the mountains">
+<% events.forEach(function(event) { %>
+    <div class="event-card">
+        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2"><%= event.name %></div>
+              <p class="text-gray-700 text-base">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+              </p>
+            </div>
+        </div>
+        <div>
+            <a class="event-btn" href="/events/<%= event.id %>">Sign up to Attend!</a>
+        </div>
+    </div>
+<% }) %>
+
+<%- include('../partials/footer') %>

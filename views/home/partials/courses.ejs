@@ -1,6 +1,50 @@
-<h1>Upcoming Cohorts</h1>
-<% courses.forEach(function(course) { %>
-    <p><%= course.name %></p>
-    <p><%= course.date %></p>
-    <a class="button" href="/courses/<%= course.id %>">Go To Course!</a>
-<% }) %>
+<div className='pt-[80px] px-4 md:px-10'>
+    <div class='grid grid-cols-1 gap-4 content-center pt-20 '>
+        <h1 class="font-outfit md:font-audiowide text-2xl">Upcoming Cohorts</h1>
+        <% courses.forEach(function(course) { %>
+            <p><%= course.name %></p>
+            <p><%= course.date %></p>
+            <a class="button" href="/courses/<%= course.id %>">Go To Course!</a>
+        <% }) %>
+    </div>
+</div>
+<div class="grid grid-cols-1 gap-4 content-center pt-20 ">
+    <div>
+        <h1 class="font-outfit md:font-audiowide text-2xl">Upcoming Cohorts</h1>
+    </div>
+    <div class="grid gap-4 text-gray-500 relative">
+        <div class="flex items-center justify-between pl-2 font-outfit uppercase text-22 font-normal rounded-2xl date-input" style="background-color:var(--secondary-black, #343538)">
+            <input class="bg-transparent outline-none text-white" type="text" placeholder="MM YYYY - MM YYYY" readonly="" value="">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-6 w-6 text-gray-400 ">
+                <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd"></path>
+            </svg>
+        </div>
+    </div>
+    <div class="grid gap-4 text-gray-500 relative ">
+        <div class="flex items-center justify-between pl-2 font-outfit uppercase text-22 font-normal rounded-2xl date-input" style="background-color:var(--secondary-black, #343538)">
+            <input class="bg-transparent outline-none text-white" type="text" placeholder="MM YYYY - MM YYYY" readonly="" value="">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-6 w-6 text-gray-400 ">
+                <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd">
+
+                </path>
+            </svg>
+        </div>
+    </div>
+    <div class="grid gap-4 text-gray-500 relative ">
+        <div class="flex items-center justify-between pl-2 font-outfit uppercase text-22 font-normal rounded-2xl date-input" style="background-color:var(--secondary-black, #343538)">
+            <input class="bg-transparent outline-none text-white" type="text" placeholder="MM YYYY - MM YYYY" readonly="" value="">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-6 w-6 text-gray-400 ">
+                <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd">
+
+                </path>
+            </svg>
+        </div>
+    </div>
+    <div class="pt-6">
+        <a class="btn" href="/signup">Participate 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-5 h-5 ml-14 mr-2 inline">
+                <path fill-rule="evenodd" d="M16.72 7.72a.75.75 0 011.06 0l3.75 3.75a.75.75 0 010 1.06l-3.75 3.75a.75.75 0 11-1.06-1.06l2.47-2.47H3a.75.75 0 010-1.5h16.19l-2.47-2.47a.75.75 0 010-1.06z" clip-rule="evenodd"></path>
+            </svg> 
+        </a>
+    </div>
+</div>

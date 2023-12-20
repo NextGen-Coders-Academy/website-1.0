@@ -1,62 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-    <%- include('../partials/head') %>
-<body>
-    <%- include('../partials/nav') %>
-    <h1>Single Course Page</h1>
-    <%= course.name %>
-    <%= moment(course.startDate).format('LL') %>
-    <%= moment(course.endDate).format('LL') %>
-    <%= course.description %>
-    <%= course.hours %>
-    <%= course.courseType %>
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
+<h1>Single Course Page</h1>
+<%= course.name %>
+<%= moment(course.startDate).format('LL') %>
+<%= moment(course.endDate).format('LL') %>
+<%= course.description %>
+<%= course.hours %>
+<%= course.courseType %>
 
-    <h3>Interested? Join the Conversation!</h3>
-    <form action="/students" method="POST">
-        <div>
-            <label for="firstName">First Name</label>
-            <input
-                type="text"
-                name="firstName"
-                id="firstName"
-            />
-        </div>
-        <div>
-            <label for="lastName">Last Name</label>
-            <input
-                type="text"
-                name="lastName"
-                id="lastName"
-            />
-        </div>
-        <div>
-            <label for="email">Email</label>
-            <input
-                type="text"
-                name="email"
-                id="email"
-            />
-        </div>
-        <div>
-            <label for="location">Location</label>
-            <input
-                type="text"
-                name="location"
-                id="location"
-            />
-        </div>
-        <div>
-            <label for="bio">Tell us a bit about yourself</label>
-            <textarea
-                type="text"
-                name="bio"
-                id="bio"
-                rows="10"
-            ></textarea>
-        </div>
-        <input type="hidden" id="courseId" name="courseId" value="<%= course.id %>" />
-        <button class="button is-info">Sign Up!</button>
-    </form>
-    <a class="button" href="/courses">Back To All Courses</a>
-</body>
-</html>
+<h3>Interested? Join the Conversation!</h3>
+<form action="/students" method="POST">
+    <div>
+        <label for="firstName">First Name</label>
+        <input
+            type="text"
+            name="firstName"
+            id="firstName"
+        />
+    </div>
+    <div>
+        <label for="lastName">Last Name</label>
+        <input
+            type="text"
+            name="lastName"
+            id="lastName"
+        />
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input
+            type="text"
+            name="email"
+            id="email"
+        />
+    </div>
+    <div>
+        <label for="location">Location</label>
+        <input
+            type="text"
+            name="location"
+            id="location"
+        />
+    </div>
+    <div>
+        <label for="bio">Tell us a bit about yourself</label>
+        <textarea
+            type="text"
+            name="bio"
+            id="bio"
+            rows="10"
+        ></textarea>
+    </div>
+    <input type="hidden" id="courseId" name="courseId" value="<%= course.id %>" />
+    <button class="button is-info">Sign Up!</button>
+</form>
+<a class="button" href="/courses">Back To All Courses</a>
+<%- include('../partials/footer') %>
