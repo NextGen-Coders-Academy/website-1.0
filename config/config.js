@@ -1,19 +1,23 @@
-require('dotenv').config()
+require('dotenv').config();
+const mongoose = require('mongoose');
 
-module.exports = {
-    development: {
-        host: process.env.DB_HOST,
-        username: process.env.DB_USERNAME,
-        password: process.env.DB_PASSWORD,
-        database: process.env.DB_NAME,
-        dialect: 'postgres',
-    },
-    test: {
-        url: process.env.TEST_DATABASE_URL,
-        dialect: 'postgres',
-    },
-    production: {
-        url: process.env.DATABASE_URL,
-        dialect: 'postgres',
-    },
-} 
+// This is my actual string in the .env file coming in
+const connectionString = process.env.MONGO_DB_URI;
+
+// This connects mongoDB to Mongoose to provide rules for the models
+mongoose.connect(connectionString);
+
+// mongoDB connection on success
+mongoose.connection.on('connected', () => {
+    console.log(`[${new Date().toLocaleTimeString()}] - MongoDB connected... 🙌 🙌 🙌`)
+})
+
+// mongoDB connection on error
+mongoose.connection.on('error', (error) => {
+    console.log('MongoDB connection error ', error)
+})
+
+// disconnecting from mongoDB
+mongoose.connection.on('disconnected', () => {
+    console.log('MongoDB disconnected ⚡️ 🔌 ⚡️')
+})

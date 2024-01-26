@@ -1,25 +1,63 @@
-// dependencies
-const express = require("express");
-const bodyParser = require("body-parser");
-const path = require("path")
-const dotenv = require("dotenv");
-
+// I need to have express and then invoke it as app per the documentation
+const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 4000;
+// This is bringing in the exports from my musicians controller
+const { home, about,  } = require('./controllers');
+const methodOverride = require('method-override');
 
-// routes
-const routes = require('./routes');
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
+require('dotenv').config();
 
-// configurations
-app.set("view engine", "ejs");
+// START OF MIDDLEWARE!!! 
 
-// middleware
-app.use(express.static('public'))
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// Make sure the middleware is finished before reading the routes. Otherwise, the routes won't have the information they need
 
-// routes
-app.use("/", routes);
+// This is setting up that ejs will be used in this project and it will be set to a directory named views. The directory has to be named views.
+app.set('view engine', 'ejs');
 
-// server connection
-app.listen(PORT, () => console.log(`Server is connected on ${PORT}`));
+// I now also want to make sure I connect this to the CSS files and any DOM manipulation.
+app.use(express.static('public'));
+
+// Forms do not come in the way I would want them to normally. I need to make sure I parse the information so that it works alongside EJS. Parses the information in express into something that will be in the req.body
+// You can also npm i body-parser and then invoke it and do the same
+app.use(express.urlencoded({ extended: false }));
+
+// This is method override. This allows us to go and override what a form normally wants to do. A form with this allows us with a ? and then an _method= to set it to either update or delete on the submission of the form
+app.use(methodOverride('_method'));
+
+app.use(
+    session({
+        // where to store the sessions in mongodb
+        store: MongoStore.create({ mongoUrl: process.env.MONGO_DB_URI }),
+        // secret key is used to sign every cookie to say its is valid
+        secret: "super secret",
+        resave: false,
+        saveUninitialized: false,
+        // configure the experation of the cookie
+        cookie: {
+            maxAge: 1000 * 60 * 60 * 24 * 7, // one week
+        },
+    })
+);
+
+// End of middleware and the start of my routes
+
+// I want to make sure that I can have a generic home route first but I also want my musicians controller to be read before any * or catch all 
+
+// app.get is saying this is a route and I'm going to be making a GET request. So basically anyone visiting my site is making a GET request.
+app.get('/', (req, res) => {
+    res.render('home');
+});
+
+
+// app.use is saying I want to use all of the imports from my musicians controller. If the first argument is saying the base URL is now http://localhost:4000/musicians when that file is read
+
+
+app.get('/*', (req, res) => {
+    res.render('404');
+});
+
+app.listen(4000, () => {
+    console.log("Listening on port 4000");
+});
