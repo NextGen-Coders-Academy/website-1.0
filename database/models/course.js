@@ -22,7 +22,7 @@ const courseSchema = new mongoose.Schema({
         type: Boolean,
         default: true
       }, courseType: {
-        type: STRING,
+        type: String,
         default: 'online'
       }}, {
         timestamps: true

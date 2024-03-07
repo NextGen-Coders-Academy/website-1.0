@@ -1,5 +1,5 @@
-const db = require("../database/models");
-const Employee = db.Employee;
+// const db = require("../database/models");
+// const Employee = db.Employee;
 
 module.exports = {
   getAllEmployees,
