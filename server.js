@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 // This is bringing in the exports from my musicians controller
-const { courseController } = require('./controllers');
+const { baseController, courseController, employeeController } = require('./controllers');
 const methodOverride = require('method-override');
 
 const session = require("express-session");
@@ -47,16 +47,16 @@ app.use(
 // I want to make sure that I can have a generic home route first but I also want my musicians controller to be read before any * or catch all 
 
 // app.get is saying this is a route and I'm going to be making a GET request. So basically anyone visiting my site is making a GET request.
-app.get('/', (req, res) => {
-    res.render('home');
-});
+app.get('/', baseController.home);
+
 
 // all courses page
-app.get('/index', courseController.getAll)
+app.get('/courses', courseController.index)
 
 // single course page
 app.get('/courses/:id', courseController.show)
 
+app.get('/employees', employeeController.index)
 
 // app.use is saying I want to use all of the imports from my musicians controller. If the first argument is saying the base URL is now http://localhost:4000/musicians when that file is read
 

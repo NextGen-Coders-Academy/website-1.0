@@ -3,13 +3,13 @@ const Employee = db.Employee;
 
 module.exports = {
   getAllEmployees,
-  getAll,
+  index,
 };
 
 // postman testing
 async function getAllEmployees(req, res) {
   try {
-    const employees = await Employee.findAll();
+    const employees = await Employee.find();
     res.json(employees);
   } catch (error) {
     console.error("Error fetching tests:", error);
@@ -17,10 +17,11 @@ async function getAllEmployees(req, res) {
   }
 }
 
-async function getAll(req, res) {
+async function index(req, res) {
   try {
-    const employees = await Employee.findAll();
-    res.render('employees', {employees: employees});
+    const employees = await Employee.find();
+    console.log(employees)
+    res.render('employees', { employees });
   } catch (error) {
     console.log(error)
     res.status(500).json({ error: "Could not fetch employees." });
