@@ -1,6 +1,6 @@
 const db = require("../database/models/index");
 const Prospect = db.Prospect;
-const liveSession = db.liveSession;
+const liveSession = db.LiveSession;
 const Event = db.Event;
 
 module.exports = {

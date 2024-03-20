@@ -1,8 +1,9 @@
 // I need to have express and then invoke it as app per the documentation
 const express = require('express');
 const app = express();
+
 // This is bringing in the exports from my musicians controller
-const { home, about,  } = require('./controllers');
+const { courseController } = require('./controllers');
 const methodOverride = require('method-override');
 
 const session = require("express-session");
@@ -49,6 +50,9 @@ app.use(
 app.get('/', (req, res) => {
     res.render('home');
 });
+
+
+app.get('/courses', courseController.index)
 
 
 // app.use is saying I want to use all of the imports from my musicians controller. If the first argument is saying the base URL is now http://localhost:4000/musicians when that file is read
