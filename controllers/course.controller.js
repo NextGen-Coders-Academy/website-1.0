@@ -22,7 +22,7 @@ async function index(req, res) {
 
 async function getAll(req, res) {
   try {
-    const courses = await Course.findAll();
+    const courses = await Course.find();
 
     res.render('courses/index', { courses });
   } catch (error) {
@@ -34,7 +34,9 @@ async function getAll(req, res) {
 async function show(req, res) {
     try {
         const id = req.params.id;
-        const course = await Course.findByPk(id);
+        console.log(id)
+        const course = await Course.findById(id);
+        console.log(course)
         res.render('courses/show', { 
             course,
             moment 

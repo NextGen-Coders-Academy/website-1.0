@@ -51,8 +51,11 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+// all courses page
+app.get('/index', courseController.getAll)
 
-app.get('/courses', courseController.index)
+// single course page
+app.get('/courses/:id', courseController.show)
 
 
 // app.use is saying I want to use all of the imports from my musicians controller. If the first argument is saying the base URL is now http://localhost:4000/musicians when that file is read
