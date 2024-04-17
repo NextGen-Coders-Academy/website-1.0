@@ -43,6 +43,6 @@ async function show(req, res) {
         });
     } catch (error) {
         console.log(error)
-        res.status(404).json({ error: "Course ID not found" });
+        res.render('courses/404');
     }
 }

@@ -58,13 +58,6 @@ app.get('/courses/:id', courseController.show)
 
 app.get('/employees', employeeController.index)
 
-// app.use is saying I want to use all of the imports from my musicians controller. If the first argument is saying the base URL is now http://localhost:4000/musicians when that file is read
-
-
-app.get('/*', (req, res) => {
-    res.render('404');
-});
-
 app.listen(4000, () => {
     console.log("Listening on port 4000");
 });
