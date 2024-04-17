@@ -2,6 +2,12 @@
 require('../../config/connection');
 
 module.exports = {
-    Courses: require('./course'),
+    Course: require('./course'),
+    Employee: require('./employee'),
+    // Enrollment: require('./enrollment'),
+    // Event: require('./enrollment'),
+    // LiveSession: require('./live_session'),
+    // Prospect: require('./prospect'),
+    // Student: require('./student')
     // Users: require('./Users')
 }

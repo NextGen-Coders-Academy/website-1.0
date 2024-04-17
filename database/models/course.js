@@ -17,7 +17,7 @@ const courseSchema = new mongoose.Schema({
     type: Date,
     default: Date.now() + (24 * 7 * 13)
   }, hours: {
-    type: INTEGER,
+    type: Number,
     default: 13 * 5 * 8
   },
   isHidden: {

@@ -1,8 +1,9 @@
 // I need to have express and then invoke it as app per the documentation
 const express = require('express');
 const app = express();
+
 // This is bringing in the exports from my musicians controller
-const { home, about,  } = require('./controllers');
+const { baseController, courseController, employeeController } = require('./controllers');
 const methodOverride = require('method-override');
 
 const session = require("express-session");
@@ -46,17 +47,16 @@ app.use(
 // I want to make sure that I can have a generic home route first but I also want my musicians controller to be read before any * or catch all 
 
 // app.get is saying this is a route and I'm going to be making a GET request. So basically anyone visiting my site is making a GET request.
-app.get('/', (req, res) => {
-    res.render('home');
-});
+app.get('/', baseController.home);
 
 
-// app.use is saying I want to use all of the imports from my musicians controller. If the first argument is saying the base URL is now http://localhost:4000/musicians when that file is read
+// all courses page
+app.get('/courses', courseController.index)
 
+// single course page
+app.get('/courses/:id', courseController.show)
 
-app.get('/*', (req, res) => {
-    res.render('404');
-});
+app.get('/employees', employeeController.index)
 
 app.listen(4000, () => {
     console.log("Listening on port 4000");

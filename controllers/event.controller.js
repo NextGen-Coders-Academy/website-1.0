@@ -1,4 +1,4 @@
-const db = require("../database/models/index");
+const db = require("../database/models");
 const Event = db.Event;
 const moment = require('moment'); // datetime conversion for ejs
 

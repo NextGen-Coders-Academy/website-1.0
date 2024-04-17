@@ -3,25 +3,26 @@ const Course = db.Course;
 const moment = require('moment'); // datetime conversion for ejs
 
 module.exports = {
-  getAllCourses,
-  getAll,
-  getOne
+  apiTest,
+  index,
+  show
 };
 
 // postman testing
-async function getAllCourses(req, res) {
+async function apiTest(req, res) {
   try {
-    const courses = await Course.findAll();
-    res.json(courses);
+    const courses = await Course.find();
+    console.log(courses)
+    res.send(courses);
   } catch (error) {
     console.error("Error fetching courses:", error);
     res.status(500).json({ error: "Could not fetch courses." });
   }
 }
 
-async function getAll(req, res) {
+async function index(req, res) {
   try {
-    const courses = await Course.findAll();
+    const courses = await Course.find();
 
     res.render('courses/index', { courses });
   } catch (error) {
@@ -30,16 +31,18 @@ async function getAll(req, res) {
   }
 }
 
-async function getOne(req, res) {
+async function show(req, res) {
     try {
         const id = req.params.id;
-        const course = await Course.findByPk(id);
+        console.log(id)
+        const course = await Course.findById(id);
+        console.log(course)
         res.render('courses/show', { 
             course,
             moment 
         });
     } catch (error) {
         console.log(error)
-        res.status(404).json({ error: "Course ID not found" });
+        res.render('courses/404');
     }
 }

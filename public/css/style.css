@@ -851,6 +851,10 @@ video {
   outline-offset: 2px;
 }
 
+#error {
+  text-align: center;
+  font-size: 40px;
+}
 
 :root {
     --foreground-rgb: 0, 0, 0;
@@ -1094,4 +1098,3 @@ video {
     line-height: 1.75rem;
   }
 }
-  
