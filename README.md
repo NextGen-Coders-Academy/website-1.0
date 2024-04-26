@@ -36,11 +36,9 @@ npm install
 
 2. Express.js: Express.js is a fast and minimalist web application framework for Node.js. It simplifies the process of building web applications and APIs by providing essential tools for routing, middleware, and handling HTTP requests and responses.
 
-3. PostgreSQL: PostgreSQL is a powerful open-source relational database management system known for its robustness, extensibility, and support for advanced data types and features. It is widely used for storing and managing structured data.
+3. Mongoose: The Mongoose library in JavaScript is a popular Object Data Modeling (ODM) library for MongoDB and Node.js. It provides a straightforward, schema-based solution to model your application data. Mongoose offers built-in type casting, validation, query building, and business logic hooks, among other features. It allows developers to structure their data and enforce a schema on MongoDB, which is inherently schema-less, facilitating the development of more robust and scalable applications.
 
-4. Mongoose: The Mongoose library in JavaScript is a popular Object Data Modeling (ODM) library for MongoDB and Node.js. It provides a straightforward, schema-based solution to model your application data. Mongoose offers built-in type casting, validation, query building, and business logic hooks, among other features. It allows developers to structure their data and enforce a schema on MongoDB, which is inherently schema-less, facilitating the development of more robust and scalable applications.
-
-5. EJS (Embedded JavaScript): EJS is a simple and effective template engine for JavaScript. It enables you to embed dynamic content within HTML, making it easier to generate dynamic web pages by injecting data from your application.
+4. EJS (Embedded JavaScript): EJS is a simple and effective template engine for JavaScript. It enables you to embed dynamic content within HTML, making it easier to generate dynamic web pages by injecting data from your application.
 
 ## Project Structure
 - config: Contains configuration file which stores the database configuration.

@@ -6,7 +6,7 @@ const moment = require('moment'); // datetime conversion for ejs
 
 module.exports = {
     home,
-}
+}                                          
 
 async function home(req, res) {
     try {
