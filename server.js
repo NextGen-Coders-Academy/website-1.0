@@ -47,7 +47,12 @@ app.use(
 // I want to make sure that I can have a generic home route first but I also want my musicians controller to be read before any * or catch all 
 
 // app.get is saying this is a route and I'm going to be making a GET request. So basically anyone visiting my site is making a GET request.
+
+// home page
 app.get('/', baseController.home);
+
+// about page
+app.get('/about', baseController.about);
 
 // all courses page
 app.get('/courses', courseController.index)
@@ -61,18 +66,6 @@ app.get('/events', eventController.index)
 // single event page
 app.get('/events/:id', eventController.show)
 
-// all employees
-app.get('/employees', employeeController.index)
-
-// all students
-app.get('/students', studentController.index)
-
-// create student
-app.post('/students', studentController.create)
-
-// all prospects
-app.get('/prospects', prospectController.index)
-
 // create prospect
 app.get('/prospects', prospectController.create)
 
@@ -80,6 +73,8 @@ app.get('/prospects', prospectController.create)
 app.get('/api/courses', courseController.apiCourses)
 
 app.get('/api/employees', employeeController.apiEmployees)
+
+app.get('*', baseController.notFound)
 
 // server listen
 app.listen(4000, () => {

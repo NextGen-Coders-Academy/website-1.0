@@ -43,6 +43,6 @@ async function show(req, res) {
         });
     } catch (error) {
         console.log(error)
-        res.render('courses/404');
+        res.render('404');
     }
 }
