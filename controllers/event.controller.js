@@ -11,7 +11,7 @@ module.exports = {
 // postman testing
 async function getAllEvents(req, res) {
     try {
-        const events = await Event.findAll();
+        const events = await Event.find();
         res.json(events);
     } catch (error) {
         console.error("Error fetching tests:", error);
@@ -21,7 +21,7 @@ async function getAllEvents(req, res) {
 
 async function getAll(req, res) {
     try {
-        const events = await Event.findAll();
+        const events = await Event.find();
         res.render('events/index', { events });
     } catch (error) {
         console.log(error)
@@ -32,7 +32,7 @@ async function getAll(req, res) {
 async function getOne(req, res) {
     try {
         const id = req.params.id;
-        const event = await Event.findByPk(id);
+        const event = await Event.findById(id);
         res.render('events/show', { 
             event,
             moment 
