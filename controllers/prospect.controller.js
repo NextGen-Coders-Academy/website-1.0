@@ -5,7 +5,7 @@ const Event = db.Event;
 
 module.exports = {
   getAllProspects,
-  getAll,
+  index,
   create
 };
 
@@ -21,7 +21,7 @@ async function getAllProspects(req, res) {
 }
 
 
-async function getAll(req, res) {
+async function index(req, res) {
   try {
     const prospects = await Prospect.find();
     res.render('prospects', { prospects });

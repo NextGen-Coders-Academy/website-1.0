@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 // This is bringing in the exports from my musicians controller
-const { baseController, courseController, employeeController } = require('./controllers');
+const { baseController, courseController, employeeController, eventController, prospectController, studentController } = require('./controllers');
 const methodOverride = require('method-override');
 
 const session = require("express-session");
@@ -49,15 +49,39 @@ app.use(
 // app.get is saying this is a route and I'm going to be making a GET request. So basically anyone visiting my site is making a GET request.
 app.get('/', baseController.home);
 
-
 // all courses page
 app.get('/courses', courseController.index)
 
 // single course page
 app.get('/courses/:id', courseController.show)
 
+// all events page
+app.get('/events', eventController.index)
+
+// single event page
+app.get('/events/:id', eventController.show)
+
+// all employees
 app.get('/employees', employeeController.index)
 
+// all students
+app.get('/students', studentController.index)
+
+// create student
+app.post('/students', studentController.create)
+
+// all prospects
+app.get('/prospects', prospectController.index)
+
+// create prospect
+app.get('/prospects', prospectController.create)
+
+// api check
+app.get('/api/courses', courseController.apiCourses)
+
+app.get('/api/employees', employeeController.apiEmployees)
+
+// server listen
 app.listen(4000, () => {
     console.log("Listening on port 4000");
 });

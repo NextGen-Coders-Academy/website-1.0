@@ -5,7 +5,7 @@ const Course = db.Course;
 
 module.exports = {
   getAllStudents,
-  getAll,
+  index,
   create
 };
 
@@ -21,7 +21,7 @@ async function getAllStudents(req, res) {
 }
 
 
-async function getAll(req, res) {
+async function index(req, res) {
   try {
     const students = await Student.find();
     res.render('students', { students });

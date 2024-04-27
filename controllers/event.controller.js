@@ -4,8 +4,8 @@ const moment = require('moment'); // datetime conversion for ejs
 
 module.exports = {
     getAllEvents,
-    getAll,
-    getOne,
+    index,
+    show,
 };
 
 // postman testing
@@ -19,7 +19,7 @@ async function getAllEvents(req, res) {
     }
 }
 
-async function getAll(req, res) {
+async function index(req, res) {
     try {
         const events = await Event.find();
         res.render('events/index', { events });
@@ -29,7 +29,7 @@ async function getAll(req, res) {
     }
 }
 
-async function getOne(req, res) {
+async function show(req, res) {
     try {
         const id = req.params.id;
         const event = await Event.findById(id);
