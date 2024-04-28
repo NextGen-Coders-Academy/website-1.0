@@ -3,13 +3,13 @@ const Course = db.Course;
 const moment = require('moment'); // datetime conversion for ejs
 
 module.exports = {
-  apiTest,
+  apiCourses,
   index,
   show
 };
 
 // postman testing
-async function apiTest(req, res) {
+async function apiCourses(req, res) {
   try {
     const courses = await Course.find();
     console.log(courses)
@@ -43,6 +43,6 @@ async function show(req, res) {
         });
     } catch (error) {
         console.log(error)
-        res.render('courses/404');
+        res.render('404');
     }
 }

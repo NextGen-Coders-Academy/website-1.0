@@ -5,14 +5,14 @@ const Event = db.Event;
 
 module.exports = {
   getAllProspects,
-  getAll,
+  index,
   create
 };
 
 // postman testing
 async function getAllProspects(req, res) {
   try {
-    const prospects = await Prospect.findAll();
+    const prospects = await Prospect.find();
     res.json(prospects);
   } catch (error) {
     console.error("Error fetching tests:", error);
@@ -21,9 +21,9 @@ async function getAllProspects(req, res) {
 }
 
 
-async function getAll(req, res) {
+async function index(req, res) {
   try {
-    const prospects = await Prospect.findAll();
+    const prospects = await Prospect.find();
     res.render('prospects', { prospects });
   } catch (error) {
     console.log(error)
@@ -34,19 +34,10 @@ async function getAll(req, res) {
 
 async function create(req, res) {
   try {
-    const { firstName, lastName, email, location, bio, status } = req.body;
-    let eventId = parseInt(req.body.eventId) ? req.body.eventId : null
-    console.log('-------------EVENT ID------------')
-    console.log(eventId)
-    console.log('-------------EVENT ID------------')
-    
     // eventId = parseInt(eventId)
-    const newProspect = await Prospect.create({ firstName, lastName, email, location, bio, status });
-    const event = await Event.findByPk(eventId) ? eventId : await Event.findOne() 
-    console.log('-------------EVENT------------')
-    console.log(event)
-    console.log('-------------EVENT------------')
-    newProspect.addEvent(event)
+    const newProspect = await Prospect.create(req.body);
+    // const event = await Event.findByPk(eventId) ? eventId : await Event.findOne() 
+    // newProspect.addEvent(event)
     
     return res.redirect('/events');
   } catch (error) {

@@ -2,12 +2,12 @@ const db = require("../database/models");
 const Employee = db.Employee;
 
 module.exports = {
-  getAllEmployees,
+  apiEmployees,
   index,
 };
 
 // postman testing
-async function getAllEmployees(req, res) {
+async function apiEmployees(req, res) {
   try {
     const employees = await Employee.find();
     res.json(employees);

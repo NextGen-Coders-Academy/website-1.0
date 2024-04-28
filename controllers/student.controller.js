@@ -5,14 +5,14 @@ const Course = db.Course;
 
 module.exports = {
   getAllStudents,
-  getAll,
+  index,
   create
 };
 
 // postman testing
 async function getAllStudents(req, res) {
   try {
-    const students = await Student.findAll();
+    const students = await Student.find();
     res.json(students);
   } catch (error) {
     console.error("Error fetching tests:", error);
@@ -21,9 +21,9 @@ async function getAllStudents(req, res) {
 }
 
 
-async function getAll(req, res) {
+async function index(req, res) {
   try {
-    const students = await Student.findAll();
+    const students = await Student.find();
     res.render('students', { students });
   } catch (error) {
     console.log(error)
@@ -34,16 +34,11 @@ async function getAll(req, res) {
 
 async function create(req, res) {
   try {
-    const { firstName, lastName, email, location, bio } = req.body;
-    let { courseId } = req.body;
-    courseId = parseInt(courseId)
-    const newStudent = await Student.create({ firstName, lastName, email, location, bio });
-    const course = await Course.findByPk(courseId);
-    newStudent.addCourse(course)
-    
+    const newStudent = await Student.create(req.body);
+    // const course = await Course.findByPk(courseId) ? courseId : await Course.findOne() 
     return res.redirect('/courses');
   } catch (error) {
     console.error("Error creating student:", error);
-    res.status(500).json({ error: "Could not create student." });
+    res.status(500).json({ error: "Could not create student."});
   }
 }

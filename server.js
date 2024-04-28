@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 // This is bringing in the exports from my musicians controller
-const { baseController, courseController, employeeController } = require('./controllers');
+const { baseController, courseController, employeeController, eventController, prospectController, studentController } = require('./controllers');
 const methodOverride = require('method-override');
 
 const session = require("express-session");
@@ -47,8 +47,12 @@ app.use(
 // I want to make sure that I can have a generic home route first but I also want my musicians controller to be read before any * or catch all 
 
 // app.get is saying this is a route and I'm going to be making a GET request. So basically anyone visiting my site is making a GET request.
+
+// home page
 app.get('/', baseController.home);
 
+// about page
+app.get('/about', baseController.about);
 
 // all courses page
 app.get('/courses', courseController.index)
@@ -56,8 +60,23 @@ app.get('/courses', courseController.index)
 // single course page
 app.get('/courses/:id', courseController.show)
 
-app.get('/employees', employeeController.index)
+// all events page
+app.get('/events', eventController.index)
 
+// single event page
+app.get('/events/:id', eventController.show)
+
+// create prospect
+app.get('/prospects', prospectController.create)
+
+// api check
+app.get('/api/courses', courseController.apiCourses)
+
+app.get('/api/employees', employeeController.apiEmployees)
+
+app.get('*', baseController.notFound)
+
+// server listen
 app.listen(4000, () => {
     console.log("Listening on port 4000");
 });
