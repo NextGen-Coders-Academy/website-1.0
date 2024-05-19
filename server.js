@@ -67,13 +67,17 @@ app.get('/events', eventController.index)
 app.get('/events/:id', eventController.show)
 
 // create prospect
-app.get('/prospects', prospectController.create)
+app.post('/prospects', prospectController.create)
+
+// create student
+app.post('/students', studentController.create)
 
 // api check
 app.get('/api/courses', courseController.apiCourses)
 
 app.get('/api/employees', employeeController.apiEmployees)
 
+// 404 page
 app.get('*', baseController.notFound)
 
 // server listen
