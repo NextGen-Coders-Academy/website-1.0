@@ -30,12 +30,15 @@ async function register(req, res, next) {
             process.env.SECRET_JWT_CODE
         )
         res.cookie('SessionID', token)
-        return res.status(201).send({user: req.body.email, token: token})
+        res.status(201).render('')
+        const courses = await Course.find();
+        
+        res.render('courses/index', { courses });
         
         //   return res.redirect('/');
     } catch (error) {
         console.error("Error creating user:", error);
-        res.status(500).json({ error: "Could not create user." });
+        res.render('auth/register', {message: 'registration failed'})
     }
 }
 
@@ -67,7 +70,6 @@ async function login(req, res, next) {
         )
         // res.cookie('SessionID', token)
         // res.status(201).send({user: req.body.email, token: token})
-        console.log('made it!')
         const courses = await Course.find();
     
         res.render('courses/index', { courses });
