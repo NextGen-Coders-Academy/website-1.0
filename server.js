@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 // This is method override. This allows us to go and override what a form normally wants to do. A form with this allows us with a ? and then an _method= to set it to either update or delete on the submission of the form
 app.use(methodOverride('_method'));
 
-// app.use(cookieParser(process.env.SECRET_JWT_CODE))
+app.use(cookieParser());
 app.use(
     session({
         // where to store the sessions in mongodb
@@ -51,7 +51,9 @@ app.use(
 // app.get is saying this is a route and I'm going to be making a GET request. So basically anyone visiting my site is making a GET request.
 
 // create user
-app.post('/users', userController.create)
+app.post('/register', userController.register)
+app.post('/login', userController.login)
+app.get('/logout', userController.logout)
 
 // home page
 app.get('/', baseController.home);
