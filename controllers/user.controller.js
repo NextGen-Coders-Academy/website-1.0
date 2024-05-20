@@ -1,5 +1,6 @@
 const db = require("../database/models/index");
 const User = db.User;
+const Course = db.Course;
 
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken')
@@ -9,8 +10,10 @@ require('dotenv').config();
 module.exports = {
     register,
     login,
-    logout
-  };
+    registerForm,
+    loginForm,
+    logout,
+};
 
 async function register(req, res, next) {
     try {
@@ -37,10 +40,11 @@ async function register(req, res, next) {
 }
 
 async function login(req, res, next) {
+    console.log(req.body.email)
     if (!req.body.email || !req.body.password) {
-        res.status(400).send({success: false, error: 'Missing parameters'})
-
+        res.status(400).render('auth/login', {success: false, error: 'Missing parameters'})
     }
+
     try {
         const user = await User.findOne({ email: req.body.email })
 
@@ -61,17 +65,29 @@ async function login(req, res, next) {
             email: user.email}, 
             process.env.SECRET_JWT_CODE
         )
-        res.cookie('SessionID', token)
-        res.status(201).send({user: req.body.email, token: token})
+        // res.cookie('SessionID', token)
+        // res.status(201).send({user: req.body.email, token: token})
+        console.log('made it!')
+        const courses = await Course.find();
+    
+        res.render('courses/index', { courses });
     } catch (error) {
-        
+        res.render('auth/login', {message: 'login failed'})
     }
+}
+
+async function registerForm(req, res) {
+    res.render('auth/register')
+}
+
+async function loginForm(req, res) {
+    res.render('auth/login')
 }
 
 async function logout(req, res, next) {
     try {
         res.setHeader('Clear-Site-Data', '"cookies"');
-        res.status(200).json({ message: 'You are logged out!' });
+        res.status(200).redirect('/auth/login');
     } catch (error) {
         res.send({message: 'logout failed'})
     }

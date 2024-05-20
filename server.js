@@ -53,6 +53,10 @@ app.use(
 // create user
 app.post('/register', userController.register)
 app.post('/login', userController.login)
+
+// user forms
+app.get('/register', userController.registerForm)
+app.get('/login', userController.loginForm)
 app.get('/logout', userController.logout)
 
 // home page
