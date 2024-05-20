@@ -1,8 +1,8 @@
-<h3 class="text-4xl"">Instructors</h3>
-<div class="flex flex-row p-10">
+<h1 class="font-outfit md:font-audiowide text-2xl">Instructors</h1>
+<div class="flex flex-row">
     <% employees.forEach(function(employee) { %>
-        <div class="bg-red-800 flex-row mx-4 px-4 rounded-lg">
-            <img  src="<%= employee.image %>" />
+        <div class="bg-red-800 flex-row p-2 rounded-lg m-10">
+            <img  class="rounded-lg" src="<%= employee.image %>" />
             <h2 class="text-3xl"><%= employee.firstName %> <%= employee.lastName %></h2>
             <p><%= employee.bio %></p>
         </div>
