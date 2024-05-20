@@ -3,9 +3,10 @@ const express = require('express');
 const app = express();
 
 // This is bringing in the exports from my musicians controller
-const { baseController, courseController, employeeController, eventController, prospectController, studentController } = require('./controllers');
+const { baseController, courseController, employeeController, eventController, prospectController, studentController, userController } = require('./controllers');
 const methodOverride = require('method-override');
 
+const cookieParser = require('cookie-parser');
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 require('dotenv').config();
@@ -27,12 +28,13 @@ app.use(express.urlencoded({ extended: false }));
 // This is method override. This allows us to go and override what a form normally wants to do. A form with this allows us with a ? and then an _method= to set it to either update or delete on the submission of the form
 app.use(methodOverride('_method'));
 
+// app.use(cookieParser(process.env.SECRET_JWT_CODE))
 app.use(
     session({
         // where to store the sessions in mongodb
         store: MongoStore.create({ mongoUrl: process.env.MONGO_DB_URI }),
         // secret key is used to sign every cookie to say its is valid
-        secret: "super secret",
+        secret: process.env.SECRET_JWT_CODE,
         resave: false,
         saveUninitialized: false,
         // configure the experation of the cookie
@@ -47,6 +49,9 @@ app.use(
 // I want to make sure that I can have a generic home route first but I also want my musicians controller to be read before any * or catch all 
 
 // app.get is saying this is a route and I'm going to be making a GET request. So basically anyone visiting my site is making a GET request.
+
+// create user
+app.post('/users', userController.create)
 
 // home page
 app.get('/', baseController.home);
