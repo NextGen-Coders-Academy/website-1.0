@@ -1,4 +1,10 @@
-<h3>Our Instructors:</h3>
-<% employees.forEach(function(employee) { %>
-    <p><%= employee.firstName %> <%= employee.lastName %></p>
-<% }) %>
+<h1 class="font-outfit md:font-audiowide text-2xl">Instructors</h1>
+<div class="flex flex-row">
+    <% employees.forEach(function(employee) { %>
+        <div class="bg-red-800 flex-row p-2 rounded-lg m-10">
+            <img  class="rounded-lg" src="<%= employee.image %>" />
+            <h2 class="text-3xl"><%= employee.firstName %> <%= employee.lastName %></h2>
+            <p><%= employee.bio %></p>
+        </div>
+    <% }) %>
+</div>

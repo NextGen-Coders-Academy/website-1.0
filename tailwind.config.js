@@ -3,6 +3,10 @@ module.exports = {
   content: ['./views/**/*.ejs'],
   theme: {
     extend: {
+      colors: {
+        primary: "white",
+        secondary: "black"
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -14,5 +18,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: []
 };

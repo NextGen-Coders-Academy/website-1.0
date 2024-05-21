@@ -23,7 +23,7 @@ async function apiCourses(req, res) {
 async function index(req, res) {
   try {
     const courses = await Course.find();
-
+    
     res.render('courses/index', { courses });
   } catch (error) {
     console.log(error)
