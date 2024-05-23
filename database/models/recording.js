@@ -18,4 +18,4 @@ const recordingSchema = new mongoose.Schema({
 
 const Recording = mongoose.model('Recording', recordingSchema);
 
-module.exports = Event;
+module.exports = Recording;

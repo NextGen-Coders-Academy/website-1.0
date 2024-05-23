@@ -9,7 +9,7 @@ module.exports = {
 async function index(req, res) {
     try {
         const recordings = await Recording.find();
-        res.render('recordings', { recordings });
+        res.render('recordings/index', { recordings });
     } catch (error) {
         console.log(error)
         res.status(500).json({ error: "Could not fetch recordings." });
