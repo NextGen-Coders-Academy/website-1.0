@@ -1,4 +1,8 @@
 <%- include('./partials/head') %>
+<% freqAskQuests.forEach(function(freqAskQuest) { %>
+    <h3><%= freqAskQuest.question %></h3>
+    <p><%= freqAskQuest.answer %></p>
+<% }) %>
 <h1>Why should someone choose Nextgen Coders Academy?</h1>
 <h2>Simply put, we offer higher quality courses at lower prices than our competitors.</h2>
 <p>
