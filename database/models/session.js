@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const liveSessionSchema = new mongoose.Schema({
+const sessionSchema = new mongoose.Schema({
   isPresent: {
     type: Boolean,
     default: false
@@ -12,6 +12,6 @@ const liveSessionSchema = new mongoose.Schema({
 }
 )
 
-const LiveSession = mongoose.model('liveSession', liveSessionSchema);
+const LiveSession = mongoose.model('session', sessionSchema);
 
 module.exports = LiveSession
