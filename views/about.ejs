@@ -1,28 +1,10 @@
 <%- include('./partials/head') %>
-<h1>Why should someone choose Nextgen Coders Academy?</h1>
-<h2>Simply put, we offer higher quality courses at lower prices than our competitors.</h2>
-<p>
-    The reason we can do this is that those who are running this bootcamp will also jump in and teach and are not doing this for money in year one. The entire goal of year one is simply to prove that using instructors who have top ratings at other bootcamps a model that has been proven to be successful for those instructors, and that the industry as a whole has moved away from, is what's best for students and can work from a company's ability to remain viable. 
-</p>
-<h2>What should students expect to get out of the bootcamp?</h2>
-<p>
-    Students should expect to get a job as a developer or in the software development industry upon graduation from Nextgen Coders Academy! This is provided that they follow our advice, which we're so confident works as a model for getting into the industry that we're even offering discounts to those who can't find jobs!
-</p>
-<h2>What are the requirements for enrolling?</h2>
-<p>
-    The requirements for enrolling are that students submit a request form, interview with one of the people helping to run the company for 30 minutes and complete prep work prior to joining. 
-</p>
-<h2>What is the cost of the bootcamp?</h2>
-<p>
-    It costs $14,000 for four units of this bootcamp. However, we do offer a $1,000 discount to anyone who pays in full upfront. We also offer other discounts to some students depending on need and their particular fit for the company. Furthermore, there is no requirement to join the entire bootcamp. Students can choose to simply enroll in one unit at a time. This includes those who enroll for the entire time getting the ability to receive a full refund of any unused portion of their payment. This means if you choose to drop out after 20% of the bootcamp has been completed, you will get a refund of 80% for the unused portion.
-</p>
-<h2>Who are the instructors?</h2>
-<p>
-    The instructors to start will be Eric Fithian and Troy Swayze as lead instructors. Both have had top ratings and roles within leadership at other bootcamps. IAs and TAs will be the top available for those positions from a group that has experience helping cohorts in the past at other bootcamps.
-</p>
-<h2>How large are class sizes?</h2>
-<p>Classes will be up to 75 students per cohort. For every 25 students, half the time will be spent in a combined lecture and half the time will be in a small group of at most 25 participants.</p>
-<h2>What is the ratio of students to instructors?</h2>
-<p>Every 25 students will get a minimum of one lead instructor who has multiple years of experience as a developer along with experience as a lead instructor along with one teaching assistant who will help at nights or on weekends outside of class and one instructional assistant who has experience helping with lectures and reviewing material with students.</p>
-<p>This means that if a cohort has 75 students, there will be three lead instructors, three teaching assistants, three instructional assistants. Furthermore, there will be an outcomes coach to help with post cohort outcomes for students assigned to every cohort.</p>
+<h1 class="font-outfit md:font-audiowide text-3xl pt-20 text-center pb-10">About and FAQ</h1>
+<div class="grid grid-cols-1 gap-4 content-center p-10 m-10">
+    <% freqAskQuests.forEach(function(freqAskQuest) { %>
+        <h3 class="text-2xl"><%= freqAskQuest.question %></h3>
+        <p><%= freqAskQuest.answer %></p>
+    <% }) %>
+
+</div>
 <%- include('./partials/footer') %>

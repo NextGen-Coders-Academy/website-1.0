@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 // This is bringing in the exports from my musicians controller
-const { baseController, courseController, employeeController, eventController, prospectController, studentController, userController } = require('./controllers');
+const { aboutController, baseController, courseController, employeeController, eventController, prospectController, recordingController, studentController, userController } = require('./controllers');
 const methodOverride = require('method-override');
 
 const cookieParser = require('cookie-parser');
@@ -63,7 +63,7 @@ app.get('/logout', userController.logout)
 app.get('/', baseController.home);
 
 // about page
-app.get('/about', baseController.about);
+app.get('/about', aboutController.index);
 
 // all courses page
 app.get('/courses', courseController.index)
@@ -79,6 +79,13 @@ app.get('/events/:id', eventController.show)
 
 // create prospect
 app.post('/prospects', prospectController.create)
+
+// all recordings page
+app.get('/recordings', recordingController.index)
+
+// single recordings page
+app.get('/recordings/:id', recordingController.show)
+
 
 // create student
 app.post('/students', studentController.create)
