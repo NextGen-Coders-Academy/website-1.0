@@ -1,20 +1,28 @@
 <%- include('../partials/head') %>
-<h1>All Events</h1>
-<img class="w-3" src="/images/chris-montgomery-smgTvepind4-unsplash.jpg" alt="Sunset in the mountains">
-<% events.forEach(function(event) { %>
-    <div class="event-card">
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
-            <div class="px-6 py-4">
-              <div class="font-bold text-xl mb-2"><%= event.name %></div>
-              <p class="text-gray-700 text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-              </p>
-            </div>
-        </div>
-        <div>
-            <a class="event-btn" href="/events/<%= event.id %>">Sign up to Attend!</a>
-        </div>
+<div class="pt-2 flex flex-col justify-center items-center max-h-screen">
+  <h1 class="font-outfit md:font-audiowide text-3xl pt-6 text-center pb-4">Upcoming Events</h1>
+  <div class="flex lg:flex-row md:flex-col sm:flex-col items-center mx-20 my-10">
+    <div class="w-1/2 m-5">
+      <% events.forEach(function(event) { %>
+          <div>
+              <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                  <div class="py-6">
+                    <div>
+                      <h2 class="font-bold text-2xl"><%= event.name %></h2>
+                      <h3 class="font-bold"><%= moment(event.date).format('LL h:mm a') %> ET</h3>
+                    </div>
+                    <p class="text-gray-700 text-base">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                    </p>
+                  </div>
+              </div>
+              <div>
+                  <a class="event-btn" href="/events/<%= event.id %>">Sign up to Attend!</a>
+              </div>
+          </div>
+      <% }) %>
     </div>
-<% }) %>
-
+    <img class="w-1/2 object-contain" src="/images/chris-montgomery-smgTvepind4-unsplash.jpg" alt="class" />
+  </div>
+</div>
 <%- include('../partials/footer') %>

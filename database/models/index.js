@@ -5,7 +5,7 @@ module.exports = {
     Course: require('./course'),
     Employee: require('./employee'),
     Enrollment: require('./enrollment'),
-    Event: require('./enrollment'),
+    Event: require('./event'),
     FreqAskQuest: require('./freqAskQuest'),
     LiveSession: require('./session'),
     Prospect: require('./prospect'),
