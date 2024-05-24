@@ -640,6 +640,9 @@ video {
 .w-1\/2 {
   width: 50%;
 }
+.w-10 {
+  width: 2.5rem;
+}
 .w-32 {
   width: 8rem;
 }
@@ -1166,6 +1169,10 @@ video {
 
   .md\:grid-cols-\[1\.2fr_1fr\] {
     grid-template-columns: 1.2fr 1fr;
+  }
+
+  .md\:flex-col {
+    flex-direction: column;
   }
 
   .md\:p-24 {
