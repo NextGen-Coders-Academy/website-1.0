@@ -1,10 +1,11 @@
 <%- include('./partials/head') %>
-<h1 class="font-outfit md:font-audiowide text-3xl pt-10 text-center pb-4">About and FAQ</h1>
-<div class="grid grid-cols-1 gap-4 content-center px-5 py-14 mx-20 my-2">
-    <% freqAskQuests.forEach(function(freqAskQuest) { %>
-        <h3 class="text-2xl"><%= freqAskQuest.question %></h3>
-        <p><%= freqAskQuest.answer %></p>
-    <% }) %>
-
+<h1 class="font-outfit md:font-audiowide text-3xl pt-10 text-center pb-10">About and FAQ</h1>
+<div class="rounded-2xl lg:basis-5/12 max-h-screen md:flex-col sm:flex-col justify-center mx-20">
+    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="object-cover w-1/2 h-auto ml-6 float-right" alt="classroom"/>
+        <% freqAskQuests.forEach(function(freqAskQuest) { %>
+            <h3 class="text-2xl pb-2"><%= freqAskQuest.question %></h3>
+            <p class="pb-10"><%= freqAskQuest.answer %></p>
+        <% }) %>
+    </div>
 </div>
 <%- include('./partials/footer') %>
