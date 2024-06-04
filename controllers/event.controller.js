@@ -22,7 +22,7 @@ async function getAllEvents(req, res) {
 async function index(req, res) {
     try {
         const events = await Event.find();
-        res.render('events/index', { events });
+        res.render('events/index', { events, moment });
     } catch (error) {
         console.log(error)
         res.status(500).json({ error: "Could not fetch events." });

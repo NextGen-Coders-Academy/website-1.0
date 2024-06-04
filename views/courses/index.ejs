@@ -1,7 +1,9 @@
 <%- include('../partials/head') %>
-<h3>All Courses:</h3>
-<% courses.forEach(function(course) { %>
-    <p><%= course.name %></p>
-    <a class="button" href="/courses/<%= course.id %>">Go To Course!</a>
-<% }) %>
+<h1 class="font-outfit md:font-audiowide text-3xl pt-6 text-center pb-4">Upcoming Cohorts</h1>
+<div class="flex align-center justify-center">
+    <% courses.forEach(function(course) { %>
+        <p><%= course.name %></p>
+        <a class="button" href="/courses/<%= course.id %>">Go To Course!</a>
+    <% }) %>
+</div>
 <%- include('../partials/footer') %>
