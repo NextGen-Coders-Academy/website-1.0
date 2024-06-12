@@ -1,5 +1,61 @@
-<footer class="text-center pt-20">
-    <p>Copyright &copy; All Rights Reserved <%= new Date().getFullYear() %></p>
+<%- include('./newsletter.ejs') %>
+<footer>
+    <div class="m-8 grid gap-x-8 gap-y-4 grid-cols-2">
+        <div>
+            <h3 class="font-bold">About</h3>
+            <nav>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">About NextGen</a></li>
+                    <li><a href="#">Request Info</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <h3 class="font-bold">Resources</h3>
+            <nav>
+                <ul>
+                    <li><a href="#">Blog &#11008;</a></li>
+                    <li><a href="#">Recording &#11008;</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="flex flex-col content-center bg-blue-900">
+        <div class="p-4 mt-8">
+            <ul class="flex justify-evenly mb-4">
+                <li>
+                    <a class="text-white text-xl" href="#" target="_blank">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="text-white text-xl" href="#" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="text-white text-xl" href="#" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="text-white text-xl" href="#" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="text-white text-xl" href="#" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="pb-8">
+            <p class="text-center text-white text-xs">Copyright © NextGen Coders Academy.</p>
+            <p class="text-center text-white text-xs">All Rights Reserved.</p>
+        </div>
+    </div>
 </footer>
 </body>
 </html>

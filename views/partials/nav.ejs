@@ -1,36 +1,49 @@
-<header class="menu active">
-    <div class="header font-outfit">
-        <div class="header-content">
-            <a href="/"><img src="/images/ng-logo.jpg" /></a>
-        </div>
-        <div class="hamburger">
-            <span>&nbsp;</span>
-            <span>&nbsp;</span>
-            <span>&nbsp;</span>
-        </div>
-        <div class="menu">
-            <div></div>
-            <div class="nav-flex">
-            <div class="nav-item">
-                <a class="nav-item-a" href="/">Main</a>
+<header class="bg-blue-900">
+    <nav class="p-3">
+        <div class="flex items-center justify-between">
+            <div class="text-white text-lg font-bold">NextGenCoders</div>
+            <!-- Desktop Menu Items -->
+            <div class="hidden md:flex space-x-4">
+                <a href="#" class="text-white">About</a>
+                <a href="#" class="text-white">Courses</a>
+                <a href="#" class="text-white">Contact</a>
+                <a href="#" class="text-white">Login</a>
+                <a href="#" class="text-white">Register</a>
             </div>
-            <div class="nav-item">
-                    <a class="nav-item-a" href="/about">About</a>
-                </div>
-                <div class="nav-item">
-                    <a class="nav-item-a" href="/events">Info Sessions</a>
-                </div>
-                <div class="nav-item">
-                    <a class="nav-item-a" href="/recordings">Recordings</a>
-                </div>
-                <div class="nav-item"><a class="nav-item-a" href="/courses">Upcoming Cohorts</a>
-                </div>
-            </div>
-            <div class="nav-item-signup">
-                <a class="nav-item-a" href="/login">Login</a>
-                <span>&nbsp;</span>
-                <a class="nav-item-a" href="/register">Sign Up</a>
-            </div>
+            <!-- Hamburger Menu Icon -->
+            <button id="mobile-menu-btn" class="text-white focus:outline-none md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
         </div>
-    </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-blue-950 bg-opacity-90 hidden md:hidden z-50 flex flex-col items-center justify-center">
+            <button id="mobile-menu-close" class="absolute top-4 right-4 text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <a href="#" class="block text-2xl text-white">About</a>
+            <a href="#" class="block text-2xl text-white">Courses</a>
+            <a href="#" class="block text-2xl text-white">Contact</a>
+            <a href="#" class="block text-2xl text-white">Login</a>
+            <a href="#" class="block text-2xl text-white mb-2">Register</a>
+        </div>
+    </nav>
 </header>
+
+<!-- Toggle menu -->
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuCloseBtn = document.getElementById('mobile-menu-close');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenuCloseBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
