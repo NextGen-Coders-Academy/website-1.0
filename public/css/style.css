@@ -605,9 +605,6 @@ video {
 .ml-6 {
   margin-left: 1.5rem;
 }
-.ml-9 {
-  margin-left: 2.25rem;
-}
 .ml-auto {
   margin-left: auto;
 }
@@ -1142,12 +1139,20 @@ video {
     margin-bottom: 2rem;
   }
 
+  .md\:ml-4 {
+    margin-left: 1rem;
+  }
+
   .md\:mr-1 {
     margin-right: 0.25rem;
   }
 
   .md\:mt-12 {
     margin-top: 3rem;
+  }
+
+  .md\:mt-4 {
+    margin-top: 1rem;
   }
 
   .md\:flex {
@@ -1217,6 +1222,11 @@ video {
 
   .md\:p-8 {
     padding: 2rem;
+  }
+
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .md\:py-4 {
