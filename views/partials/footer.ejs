@@ -1,6 +1,6 @@
 <%- include('./newsletter.ejs') %>
 <footer>
-    <div class="m-8 grid gap-x-8 gap-y-4 grid-cols-2">
+    <div class="max-w-2xl m-8 grid gap-x-8 gap-y-4 grid-cols-2">
         <div>
             <h3 class="font-bold">About</h3>
             <nav>
@@ -15,36 +15,42 @@
             <h3 class="font-bold">Resources</h3>
             <nav>
                 <ul>
-                    <li><a href="#">Blog &#11008;</a></li>
-                    <li><a href="#">Recording &#11008;</a></li>
+                    <li>
+                        <a href="#">Blog</a>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </li>
+                    <li>
+                        <a href="#">Recording</a>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </li>
                 </ul>
             </nav>
         </div>
     </div>
-    <div class="flex flex-col content-center bg-blue-900">
-        <div class="p-4 mt-8">
+    <div class="flex flex-col items-center bg-blue-900">
+        <div class="p-4 mt-8 max-w-md">
             <ul class="flex justify-evenly mb-4">
-                <li>
+                <li class="mx-6">
                     <a class="text-white text-xl" href="#" target="_blank">
                         <i class="fa-brands fa-x-twitter"></i>
                     </a>
                 </li>
-                <li>
+                <li class="mx-6">
                     <a class="text-white text-xl" href="#" target="_blank">
                         <i class="fa-brands fa-linkedin"></i>
                     </a>
                 </li>
-                <li>
+                <li class="mx-6">
                     <a class="text-white text-xl" href="#" target="_blank">
                         <i class="fa-brands fa-facebook"></i>
                     </a>
                 </li>
-                <li>
+                <li class="mx-6">
                     <a class="text-white text-xl" href="#" target="_blank">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
                 </li>
-                <li>
+                <li class="mx-6">
                     <a class="text-white text-xl" href="#" target="_blank">
                         <i class="fa-brands fa-youtube"></i>
                     </a>

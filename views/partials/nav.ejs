@@ -1,7 +1,12 @@
-<header class="bg-blue-900">
-    <nav class="p-3">
+<header class="bg-blue-900 sticky top-0 z-20">
+    <nav class="p-3 max-w-screen-lg">
         <div class="flex items-center justify-between">
-            <div class="text-white text-lg font-bold">NextGenCoders</div>
+            <div class="text-white text-lg font-bold">
+                <div class="flex items-center">
+                    <img src="../../images/ng-logo.jpg" alt="Logo" class="h-10 w-10">
+                    <span class="text-white font-bold ml-4">NextGenCoders</span>
+                </div>
+            </div>
             <!-- Desktop Menu Items -->
             <div class="hidden md:flex space-x-4">
                 <a href="#" class="text-white">About</a>
@@ -18,32 +23,32 @@
             </button>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="fixed inset-0 bg-blue-950 bg-opacity-90 hidden md:hidden z-50 flex flex-col items-center justify-center">
+        <div id="mobile-menu" class="fixed inset-0 bg-blue-950 hidden md:hidden z-50 flex flex-col justify-evenly">
             <button id="mobile-menu-close" class="absolute top-4 right-4 text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
-            <a href="#" class="block text-2xl text-white">About</a>
-            <a href="#" class="block text-2xl text-white">Courses</a>
-            <a href="#" class="block text-2xl text-white">Contact</a>
-            <a href="#" class="block text-2xl text-white">Login</a>
-            <a href="#" class="block text-2xl text-white mb-2">Register</a>
+            <div class="flex items-center ml-16">
+                <i class="text-white fa-regular fa-circle-check"></i>
+                <a href="#" class="block text-2xl text-white ml-2">About</a>
+            </div>
+            <div class="flex items-center ml-16">
+                <i class="text-white fa-regular fa-circle-check"></i>
+                <a href="#" class="block text-2xl text-white ml-2">Courses</a>
+            </div>
+            <div class="flex items-center ml-16">
+                <i class="text-white fa-regular fa-circle-check"></i>
+                <a href="#" class="block text-2xl text-white ml-2">Contact</a>
+            </div>
+            <div class="flex items-center ml-16">
+                <i class="text-white fa-regular fa-circle-check"></i>
+                <a href="#" class="block text-2xl text-white ml-2">Login</a>
+            </div>
+            <div class="flex items-center ml-16">
+                <i class="text-white fa-regular fa-circle-check"></i>
+                <a href="#" class="block text-2xl text-white ml-2">Register</a>
+            </div>
         </div>
     </nav>
 </header>
-
-<!-- Toggle menu -->
-<script>
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuCloseBtn = document.getElementById('mobile-menu-close');
-
-    mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-
-    mobileMenuCloseBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-</script>
