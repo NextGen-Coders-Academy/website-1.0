@@ -689,9 +689,6 @@ video {
 .max-w-md {
   max-width: 28rem;
 }
-.max-w-screen-lg {
-  max-width: 1024px;
-}
 .max-w-screen-md {
   max-width: 768px;
 }
@@ -1122,6 +1119,11 @@ video {
 }
 @media (min-width: 768px) {
 
+  .md\:mx-12 {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
   .md\:my-0 {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -1259,6 +1261,11 @@ video {
   }
 }
 @media (min-width: 1024px) {
+
+  .lg\:mx-24 {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
 
   .lg\:mb-4 {
     margin-bottom: 1rem;
