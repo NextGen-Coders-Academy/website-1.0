@@ -36,6 +36,15 @@ async function about(req, res) {
     }
 }
 
+async function reqInfo(req, res) {
+    try {
+        res.render('reqinfo/index');
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ error: "Req Info route not working" });
+    }
+}
+
 async function notFound(req, res) {
     try {
         res.render('404');

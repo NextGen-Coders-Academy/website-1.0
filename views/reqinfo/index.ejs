@@ -1,0 +1,20 @@
+<%- include('../partials/head') %>
+<div class="flex justify-center">
+  <div class="min-w-96 my-16 md:mx-3 pb-8 pt-3 md:max-w-md p-4 rounded-lg bg-blue-900">
+    <h2 class="text-3xl my-4 font-bold text-white">Request Information</h2>
+    <p>Need more information about our Software Engineering course? Let’s jump on a call.</p>
+    <form class="flex flex-col" action="" method="post">
+        <label for="fullName" hidden>Full Name</label>
+        <input class="rounded p-2 my-4 text-lg" type="fullName" id="fullName" name="fullName" placeholder="Enter Full Name">
+        <label for="email" hidden>Email</label>
+        <input class="rounded p-2 my-4 text-lg" type="email" id="email" name="email" placeholder="Enter Email Address">
+        <label for="phoneNumber" hidden>Phone Number</label>
+        <input class="rounded p-2 my-4 text-lg" type="phoneNumber" id="phoneNumber" name="phoneNumber" placeholder="Enter Phone Number">
+        <button class="font-xs rounded py-2 my-4 text-white bg-blue-700 hover:bg-blue-600" type="submit" value="Submit">Submit →</button>
+    </form>
+    <div class="my-3">
+        <p class="text-xs text-white">Already have an account? <span class="text-blue-200"><a href="/login">Login here.</a></span></p>
+    </div>
+  </div>
+</div>
+<%- include('../partials/footer') %> 
