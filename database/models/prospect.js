@@ -13,6 +13,10 @@ const prospectSchema = new mongoose.Schema({
     type: String,
     required: [true, "Student must have email"]
   },
+  phoneNumber: {
+    type: String,
+    required: [true, "Student must have phone number"]
+  },
   location: String,
   bio: String,
   status: {

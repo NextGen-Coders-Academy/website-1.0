@@ -24,7 +24,7 @@ async function getAllProspects(req, res) {
 async function index(req, res) {
   try {
     const prospects = await Prospect.find();
-    res.render('prospects', { prospects });
+    res.render('reqinfo/index', { prospects });
   } catch (error) {
     console.log(error)
     res.status(500).json({ error: "Could not fetch prospects." });
@@ -39,7 +39,7 @@ async function create(req, res) {
     // const event = await Event.findByPk(eventId) ? eventId : await Event.findOne() 
     // newProspect.addEvent(event)
     
-    return res.redirect('/events');
+    return res.redirect('/');
   } catch (error) {
     console.error("Error creating prospect:", error);
     res.status(500).json({ error: "Could not create prospect." });

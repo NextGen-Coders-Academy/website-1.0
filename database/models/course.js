@@ -2,12 +2,9 @@ const mongoose = require('mongoose');
 const { INTEGER } = require('sequelize');
 
 const courseSchema = new mongoose.Schema({
-  firstName: {
+  name: {
     type: String,
-  }, lastName: {
-    type: String,
-  }, 
-  description: {
+  }, description: {
     type: String,
     default: ""
   }, startDate: {
