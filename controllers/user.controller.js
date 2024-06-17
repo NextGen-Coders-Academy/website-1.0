@@ -1,5 +1,6 @@
 const db = require("../database/models/index");
 const User = db.User;
+const Blacklist = db.Blacklist;
 const Course = db.Course;
 
 const bcrypt = require('bcryptjs');
@@ -88,6 +89,7 @@ async function loginForm(req, res) {
 
 async function logout(req, res, next) {
     try {
+        console.log(req.headers['cookie'])
         res.setHeader('Clear-Site-Data', '"cookies"');
         res.status(200).redirect('/auth/login');
     } catch (error) {

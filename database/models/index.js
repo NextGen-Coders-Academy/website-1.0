@@ -2,6 +2,7 @@
 require('../../config/connection');
 
 module.exports = {
+    Blacklist: require('./blacklist'),
     Course: require('./course'),
     Employee: require('./employee'),
     Enrollment: require('./enrollment'),
