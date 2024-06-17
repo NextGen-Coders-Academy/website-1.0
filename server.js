@@ -65,6 +65,9 @@ app.get('/', baseController.home);
 // about page
 app.get('/about', aboutController.index);
 
+// request info form page
+app.get('/request-info', prospectController.index);
+
 // all courses page
 app.get('/courses', courseController.index)
 
@@ -85,7 +88,6 @@ app.get('/recordings', recordingController.index)
 
 // single recordings page
 app.get('/recordings/:id', recordingController.show)
-
 
 // create student
 app.post('/students', studentController.create)

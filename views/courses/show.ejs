@@ -1,58 +1,52 @@
 <%- include('../partials/head') %>
-<%- include('../partials/nav') %>
-<h1>Single Course Page</h1>
-<%= course.name %>
-<%= moment(course.startDate).format('LL') %>
-<%= moment(course.endDate).format('LL') %>
-<%= course.description %>
-<%= course.hours %>
-<%= course.courseType %>
 
-<h3>Interested? Join the Conversation!</h3>
-<form action="/students" method="POST">
-    <div>
-        <label for="firstName">First Name</label>
-        <input
-            type="text"
-            name="firstName"
-            id="firstName"
-        />
+<div class="flex justify-center bg-blue-100">
+    <div class="md:mx-3 pt-3 md:max-w-md p-4 md:rounded-lg">
+        <h1 class="text-center my-8 text-3xl font-bold"><%= course.name %></h1>
+        <div class="max-w-screen-md py-8 pl-8 md:rounded-lg flex flex-col">
+            <h2 class="text-xl underline">Course Information</h2>
+            <div class="mt-4">
+                <i class="fa-solid fa-hourglass-start"></i>
+                <strong class="text-xs">Start</strong>
+            </div>
+            <p class="mb-4"><%= moment(course.startDate).format('LL') %></p>
+            <div class="mt-4">
+                <i class="fa-solid fa-hourglass-start"></i>
+                <strong class="text-xs">End</strong>
+            </div>
+            <p class="mb-4"><%= moment(course.endDate).format('LL') %></p>
+            <div class="mt-4">
+                <i class="fa-solid fa-circle-info"></i>
+                <strong class="text-xs">Description</strong>
+            </div>
+            <p class="mb-4"><%= course.description %></p>
+            <div class="mt-4">
+                <i class="fa-regular fa-clock"></i>
+                <strong class="text-xs">Total Hours</strong>
+            </div>
+            <p class="mb-4"><%= course.hours %>+</p>
+            <p><%= course.courseType %></p>
+        </div>
     </div>
-    <div>
-        <label for="lastName">Last Name</label>
-        <input
-            type="text"
-            name="lastName"
-            id="lastName"
-        />
+</div>
+
+<div class="flex justify-center">
+    <div class="my-16 md:mx-3 pt-3 md:max-w-md p-4 rounded-lg bg-blue-900">
+      <h2 class="text-2xl my-4 font-bold text-white">Get more info on this cohort</h2>
+      <form class="flex flex-col" action="/students" method="POST">
+          <label for="firstName" hidden>First Name</label>
+          <input class="rounded p-2 my-4 text-lg" type="text" required id="firstName" name="firstName" placeholder="Enter First Name">
+          <label for="lastName" hidden>Last Name</label>
+          <input class="rounded p-2 my-4 text-lg" type="text" required id="lastName" name="lastName" placeholder="Enter Last Name">
+          <label for="email" hidden>Email</label>
+          <input class="rounded p-2 my-4 text-lg" type="text" required id="email" name="email" placeholder="Enter Email Address">
+          <label for="location" hidden>Location</label>
+          <input class="rounded p-2 my-4 text-lg" type="text" required id="location" name="location" placeholder="Enter Location">
+          <label for="bio" hidden>Bio</label>
+          <textarea class="rounded p-2 my-4 text-lg" type="text" id="bio" name="bio" placeholder="Tell us a little bit about yourself." rows="10"></textarea>
+          <button class="font-xs rounded py-2 my-4 text-white bg-blue-700 hover:bg-blue-600" type="submit" value="Login">Submit →</button>
+      </form>
     </div>
-    <div>
-        <label for="email">Email</label>
-        <input
-            type="text"
-            name="email"
-            id="email"
-        />
-    </div>
-    <div>
-        <label for="location">Location</label>
-        <input
-            type="text"
-            name="location"
-            id="location"
-        />
-    </div>
-    <div>
-        <label for="bio">Tell us a bit about yourself</label>
-        <textarea
-            type="text"
-            name="bio"
-            id="bio"
-            rows="10"
-        ></textarea>
-    </div>
-    <input type="hidden" id="courseId" name="courseId" value="<%= course.id %>" />
-    <button class="button is-info">Sign Up!</button>
-</form>
-<a class="button" href="/courses">Back To All Courses</a>
+  </div>
+
 <%- include('../partials/footer') %>

@@ -3,17 +3,16 @@
     <div class="flex-col flex">
         <div class="w-full md:w-full flex-col px-3">
             <div class="flex-wrap mx-auto text-4xl mb-4">
-                <h1 class="font-outfit md:font-audiowide text-3xl pt-6 text-center pb-4"><%= event.name %></h1>
+                <h1 class="text-3xl pt-6 text-center pb-4"><%= event.name %></h1>
             </div>
         </div>
         <form action="/prospects" method="POST" class="w-full max-w-lg justify-center align-center">
-            <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="flex flex-wrap mx-3 mb-6">
                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="firstName">
                     First Name
                     </label>
-                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="firstName" type="text" placeholder="Jane" name="firstName">
-                    <p class="text-red-500 text-xs italic">Please fill out this field.</p>
+                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="firstName" type="text" placeholder="Jane" name="firstName">
                 </div>
                 <div class="w-full md:w-1/2 px-3">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="lastName">
@@ -23,12 +22,20 @@
                 </div>
             </div>
             <div class="flex flex-wrap -mx-3 mb-6">
-            <div class="w-full px-3">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="email">
-                Email
-                </label>
-                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" name="email" type="text" placeholder="jane.doe@email.com">
+                <div class="w-full px-3">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="email">
+                    Email
+                    </label>
+                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" name="email" type="text" placeholder="jane.doe@email.com">
+                </div>
             </div>
+            <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full px-3">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="phoneNumber">
+                    Phone Number
+                    </label>
+                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="phoneNumber" name="phoneNumber" type="text" placeholder="555-555-5555">
+                </div>
             </div>
             <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full px-3">
@@ -48,9 +55,12 @@
             </div>
             <div class="flex flex-col align-center justify-between">
                 <input type="hidden" id="eventId" name="eventId" value="<%= event.id %>" />
-                <button class="btn bg-[#ea3838] w-full is-info mb-3">Sign Up!</button>
-                <button href="/events">Back To All Events</button>
+                <div class="flex flex-col md:flex-row-reverse">
+                    <button class="md:ml-2 basis-1/2 font-xs rounded py-2 text-white bg-blue-400 hover:bg-blue-500" type="submit" value="Sign Up">Attend →</button>
+                    <a href="/events" class=" text-center mt-4 md:mt-0 md:mr-2 basis-1/2 font-xs rounded py-2 text-black border border-blue-400 hover:bg-blue-500 hover:text-white" value="All Events">← All Events</a>
+                </div>
             </div>
         </form>
     </div>
 </div>
+<%- include('../partials/footer') %>

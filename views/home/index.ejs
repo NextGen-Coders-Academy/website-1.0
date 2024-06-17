@@ -1,12 +1,12 @@
 <%- include('../partials/head') %>
-<div class="pt-[80px] px-4 md:px-10">
-    <div class="pt-[20px] lg:w-[950px] lg:mx-auto">
-        <%- include('./partials/top_content') %>
-        <%- include('./partials/logo') %>
-        <%- include('./partials/course_details') %>
-        <%- include('./partials/employees') %>
-        <%- include('./partials/courses') %>
-        <%- include('./partials/bottom_content') %>
+<div class="">
+    <%- include('./partials/top_content.ejs')%>
+    <div class="flex flex-col justify-center items-center">
+        <%- include('./partials/top_cta.ejs')%>
+        <%- include('./partials/checklist.ejs')%>
+        <%- include('./partials/course_info.ejs')%>
+        <%- include('./partials/employees.ejs')%>
+        <%- include('./partials/faq.ejs')%>
     </div>
 </div>
 <%- include('../partials/footer') %>

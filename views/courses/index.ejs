@@ -1,9 +1,15 @@
 <%- include('../partials/head') %>
-<h1 class="font-outfit md:font-audiowide text-3xl pt-6 text-center pb-4">Upcoming Cohorts</h1>
-<div class="flex align-center justify-center">
-    <% courses.forEach(function(course) { %>
-        <p><%= course.name %></p>
-        <a class="button" href="/courses/<%= course.id %>">Go To Course!</a>
-    <% }) %>
+<div class="flex justify-center">
+    <div class="flex flex-col my-16">
+        <div class="bg-blue-100 rounded-lg md:max-w-screen-md px-16">
+            <h1 class="font-bold text-3xl mt-16 text-center">Upcoming Cohorts</h1>
+            <div class="text-center my-8 py-8 rounded-lg bg-white">
+                <% courses.forEach(function(course) { %>
+                    <p class="font-bold"><%= course.name %></p>
+                    <a class="text-xs hover:text-blue-500 hover:underline" href="/courses/<%= course.id %>">Learn More</a>
+                <% }) %>
+            </div>
+        </div>
+    </div>
 </div>
 <%- include('../partials/footer') %>

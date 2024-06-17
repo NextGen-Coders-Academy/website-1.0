@@ -1,5 +1,68 @@
-<footer class="text-center pt-20">
-    <p>Copyright &copy; All Rights Reserved <%= new Date().getFullYear() %></p>
+<!-- <%- include('./newsletter.ejs') %> -->
+<footer>
+    <div class="flex justify-center my-12">
+        <div class="mr-4">
+            <h3 class="font-bold">About</h3>
+            <nav>
+                <ul>
+                    <li><a href="/" class="hover:text-blue-500 hover:underline">FAQs</a></li>
+                    <li><a href="/" class="hover:text-blue-500 hover:underline">About NextGen</a></li>
+                    <li><a href="/request-info" class="hover:text-blue-500 hover:underline">Request Info</a></li>
+                    <li><a href="/courses" class="hover:text-blue-500 hover:underline">Courses</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="ml-4">
+            <h3 class="font-bold">Resources</h3>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#" class="hover:text-blue-500 hover:underline"">Blog</a>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:text-blue-500 hover:underline"">Recording</a>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="flex flex-col items-center bg-blue-900">
+        <div class="p-4 mt-8 max-w-md">
+            <ul class="flex justify-evenly mb-4">
+                <li class="mx-6">
+                    <a class="text-white text-xl p-1 hover:bg-blue-600 hover:rounded-lg" href="#" target="_blank">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </li>
+                <li class="mx-6">
+                    <a class="text-white text-xl p-1 hover:bg-blue-600 hover:rounded-lg" href="#" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="mx-6">
+                    <a class="text-white text-xl p-1 hover:bg-blue-600 hover:rounded-lg" href="#" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </li>
+                <li class="mx-6">
+                    <a class="text-white text-xl p-1 hover:bg-blue-600 hover:rounded-lg" href="#" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+                <li class="mx-6">
+                    <a class="text-white text-xl p-1 hover:bg-blue-600 hover:rounded-lg" href="#" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="pb-8">
+            <p class="text-center text-white text-xs">Copyright © NextGen Coders Academy.</p>
+            <p class="text-center text-white text-xs">All Rights Reserved.</p>
+        </div>
+    </div>
 </footer>
 </body>
 </html>

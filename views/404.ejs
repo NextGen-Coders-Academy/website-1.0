@@ -1,11 +1,12 @@
 <%- include('./partials/head') %>
 <div class="flex flex-col h-full">
-    <div class="flex items-center pt-2 justify-center text-center flex-col" id="error">
-        <h1 class="text-4xl pt-1">Uh oh...</h1>
+    <div class="flex items-center pt-2 justify-center text-center flex-col id="error">
+        <h1 class="text-4xl pt-1 my-8">Oops!</h1>
+        <p class="px-4 mb-8">Sorry about that! It looks like the the page you requested doesn't exist.</p>
         <div class= h-auto max-w-lg m-10 relative flex flex-col items-center justify-center">
-            <img class="h-auto max-w-lg px-6 py-4" src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-            <a class="button text-lg bg-red-800 p-2 rounded-full" href="/">Back to Main<span class="ml-2">→</span></a>
+            <img class="bg-blue-300 h-auto max-w-lg px-6 py-4 md:rounded-lg mb-8" src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            <a class="button bg-blue-800 py-2 px-4 text-white text-lgp-2 rounded hover:bg-blue-700" href="/">Take Me Home →</a>
         </div>
-        <%- include('./partials/footer') %>
     </div>
 </div>
+<%- include('./partials/footer') %>
