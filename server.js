@@ -101,6 +101,6 @@ app.get('/api/employees', employeeController.apiEmployees)
 app.get('*', baseController.notFound)
 
 // server listen
-app.listen(4000, () => {
-    console.log("Listening on port 4000");
+app.listen(process.env.PORT, () => {
+    // console.log("Listening on port 4000");
 });
