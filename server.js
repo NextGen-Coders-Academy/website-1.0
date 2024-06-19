@@ -100,7 +100,13 @@ app.get('/api/employees', employeeController.apiEmployees)
 // 404 page
 app.get('*', baseController.notFound)
 
-// server listen
-app.listen(process.env.PORT, () => {
-    // console.log("Listening on port 4000");
+// IMPORTANT! Uncomment prod and comment 
+// dev before pushing changes
+
+// production server
+// app.listen(process.env.PORT, () => {});
+
+// development server
+app.listen(4000, () => {
+    console.log("Listening on port 4000");
 });

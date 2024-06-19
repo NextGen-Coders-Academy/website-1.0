@@ -20,7 +20,7 @@ async function apiEmployees(req, res) {
 async function index(req, res) {
   try {
     const employees = await Employee.find();
-    console.log(employees)
+    // console.log(employees)
     res.render('employees', { employees });
   } catch (error) {
     console.log(error)

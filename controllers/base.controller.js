@@ -17,7 +17,7 @@ async function home(req, res) {
         const courses = await Course.find();
         const freqAskQuests = await FreqAskQuest.find();
         // const events = await Event.find({ limit: 1, order: [['date', 'ASC']]});
-        console.log(employees)
+        // console.log(employees)
         res.render('home/index', {
             employees,
             courses,

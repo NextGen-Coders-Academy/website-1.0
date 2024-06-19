@@ -12,7 +12,7 @@ module.exports = {
 async function apiCourses(req, res) {
   try {
     const courses = await Course.find();
-    console.log(courses)
+    // console.log(courses)
     res.send(courses);
   } catch (error) {
     console.error("Error fetching courses:", error);
@@ -34,9 +34,9 @@ async function index(req, res) {
 async function show(req, res) {
     try {
         const id = req.params.id;
-        console.log(id)
+        // console.log(id)
         const course = await Course.findById(id);
-        console.log(course)
+        // console.log(course)
         res.render('courses/show', { 
             course,
             moment 

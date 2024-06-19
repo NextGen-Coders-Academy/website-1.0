@@ -43,7 +43,7 @@ async function register(req, res, next) {
 }
 
 async function login(req, res, next) {
-    console.log(req.body.email)
+    // console.log(req.body.email)
     if (!req.body.email || !req.body.password) {
         res.status(400).render('auth/login', {success: false, error: 'Missing parameters'})
     }
