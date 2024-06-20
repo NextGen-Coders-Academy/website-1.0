@@ -104,9 +104,9 @@ app.get('*', baseController.notFound)
 // dev before pushing changes
 
 // production server
-// app.listen(process.env.PORT, () => {});
+app.listen(process.env.PORT, () => {});
 
 // development server
-app.listen(4000, () => {
-    console.log("Listening on port 4000");
-});
+// app.listen(4000, () => {
+//     console.log("Listening on port 4000");
+// });
