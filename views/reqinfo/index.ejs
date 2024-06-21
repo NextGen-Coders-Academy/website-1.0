@@ -1,26 +1,26 @@
 <%- include('../partials/head') %>
 <section>
   <div class="flex justify-center">
-      <div class="min-w-96 my-16 md:mx-3 pb-8 pt-3 md:max-w-md p-4 md:rounded-lg bg-blue-900">
-        <h2 class="text-3xl my-4 font-bold text-white">Request Information</h2>
-        <p class="text-white mb-2">Need more information about our Software Engineering course? Let’s jump on a call.</p>
+      <div class="min-w-96 my-16 md:mx-3 pb-8 pt-3 md:max-w-md p-4 md:rounded-lg bg-slate-50">
+        <h2 class="text-3xl my-4 font-bold ">Request Information</h2>
+        <p class=" mb-8">Need more information about our Software Engineering course? Let’s jump on a call.</p>
         <form class="flex flex-col" action="/prospects" method="post">
-            <label for="firstName" hidden>First Name</label>
-            <input class="rounded p-2 my-4 text-lg" type="firstName" id="firstName" name="firstName" placeholder="Enter First Name" required>
-            <label for="lastName" hidden>Last Name</label>
-            <input class="rounded p-2 my-4 text-lg" type="lastName" id="lastName" name="lastName" placeholder="Enter Last Name" required>
-            <label for="email" hidden>Email</label>
-            <input class="rounded p-2 my-4 text-lg" type="email" id="email" name="email" placeholder="Enter Email Address" required>
-            <label for="phoneNumber" hidden>Phone Number</label>
-            <input class="rounded p-2 my-4 text-lg" type="phoneNumber" id="phoneNumber" name="phoneNumber" placeholder="Enter Phone Number" required>
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="firstName">First Name</label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="firstName" id="firstName" name="firstName" placeholder="Enter First Name" required>
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="lastName">Last Name</label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="lastName" id="lastName" name="lastName" placeholder="Enter Last Name" required>
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="email">Email</label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="email" id="email" name="email" placeholder="Enter Email Address" required>
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="phoneNumber">Phone Number</label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="phoneNumber" id="phoneNumber" name="phoneNumber" placeholder="Enter Phone Number" required>
             <div class="my-3">
-                <p class="text-xs text-white">By submitting this form, you agree to receive SMS communications related to courses at NextGenCoders Academy. I have read and acknowledge General Assembly’s Privacy Policy and Terms of Service. Message & data rates apply. Message frequency varies. Reply HELP for help and STOP to opt-out.</p>
+                <p class="text-xs">By submitting this form, you agree to receive SMS communications related to courses at NextGenCoders Academy. I have read and acknowledge General Assembly’s Privacy Policy and Terms of Service. Message & data rates apply. Message frequency varies. Reply HELP for help and STOP to opt-out.</p>
             </div>
             <div class="flex">
                 <input type="checkbox" id="newsletterConfirm" name="newsletterConfirm" class="">
-                <label for="newsle" class="text-white ml-2">Add me to the NextGenCoders Academy newsletter.</label>
+                <label for="newsletter" class="ml-2">Add me to the NextGenCoders Academy newsletter.</label>
             </div>
-            <button class="font-xs rounded py-2 my-4 text-white bg-blue-700 hover:bg-blue-600" type="submit" value="Submit">Submit →</button>
+            <button class="mt-4 font-xs rounded py-2 text-white bg-blue-400 hover:bg-blue-500" type="submit" value="Submit">Submit →</button>
           </form>
         
       </div>

@@ -1,13 +1,13 @@
 <%- include('../partials/head') %>
-<div class="h-screen w-full flex mx-auto justify-center items-center">
-    <div class="flex-col flex">
+<div class="w-full flex mx-auto justify-center items-center">
+    <div class="flex-col flex my-8 bg-slate-50 px-4 rounded-lg">
         <div class="w-full md:w-full flex-col px-3">
             <div class="flex-wrap mx-auto text-4xl mb-4">
-                <h1 class="text-3xl pt-6 text-center pb-4"><%= event.name %></h1>
+                <h1 class="font-bold text-3xl pt-6 text-center pb-4"><%= event.name %></h1>
             </div>
         </div>
         <form action="/prospects" method="POST" class="w-full max-w-lg justify-center align-center">
-            <div class="flex flex-wrap mx-3 mb-6">
+            <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="firstName">
                     First Name
@@ -60,6 +60,8 @@
                     <a href="/events" class=" text-center mt-4 md:mt-0 md:mr-2 basis-1/2 font-xs rounded py-2 text-black border border-blue-400 hover:bg-blue-500 hover:text-white" value="All Events">← All Events</a>
                 </div>
             </div>
+            <div class="my-16"></div>
+            <div class="my-16"></div>
         </form>
     </div>
 </div>
