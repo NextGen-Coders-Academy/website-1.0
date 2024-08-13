@@ -8,8 +8,12 @@
             <h1 class="font-bold text-3xl mt-16 text-center">Upcoming Cohorts</h1>
             <div class="text-center my-8 py-8 rounded-lg bg-white">
                 <% courses.forEach(function(course) { %>
-                    <p class="font-bold"><%= course.name %></p>
-                    <a class="text-xs hover:text-blue-500 hover:underline" href="/courses/<%= course.id %>">Learn More</a>
+                    <p class="font-bold">Course name: <%= course.name %></p>
+                    <hr><br>
+                    <p style="text-align: left; padding: 1%;">Description: <%= course.description %></p><br>
+                    <p style="text-align: left; padding: 1%;">Start date: <%= moment(course.startDate).format('LL') %></p><br>
+                    <p style="text-align: left; padding: 1%;">End date: <%= moment(course.endDate).format('LL') %></p>
+                    <a class="text-xs hover:text-blue-500 hover:underline" href="/courses/<%= course._id %>">Learn More</a>
                 <% }) %>
             </div>
         </div>

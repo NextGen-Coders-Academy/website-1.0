@@ -24,7 +24,7 @@ async function index(req, res) {
   try {
     const courses = await Course.find();
     
-    res.render('courses/index', { courses });
+    res.render('courses/index', { courses, moment });
   } catch (error) {
     console.log(error)
     res.status(500).json({ error: "Could not fetch courses." });
