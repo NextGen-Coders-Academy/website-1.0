@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /register/
+Disallow: /login/
+Disallow: /private/
+Disallow: /tmp/
+Allow: /
+Sitemap: https://www.nextgencodersacademy.com/sitemap.xml

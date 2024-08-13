@@ -1,5 +1,6 @@
 // I need to have express and then invoke it as app per the documentation
 const express = require('express');
+const path = require('path');
 const app = express();
 
 // This is bringing in the exports from my musicians controller

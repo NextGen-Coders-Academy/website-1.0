@@ -8,7 +8,7 @@ module.exports = {
 async function index(req, res) {
     try {
         const freqAskQuests = await FreqAskQuest.find();
-        res.render('about', { freqAskQuests });
+        res.render('about/about', { freqAskQuests });
     } catch (error) {
         console.log(error)
         res.status(500).json({ error: "Could not fetch frequently asked questions." });
