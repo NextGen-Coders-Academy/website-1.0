@@ -24,7 +24,12 @@ async function index(req, res) {
   try {
     const courses = await Course.find();
     
-    res.render('courses/index', { courses, moment });
+    res.render('courses/index', { 
+      courses, 
+      moment,
+      title: "Explore Coding Courses | Next Gen Coders Academy",
+      metaDescription: "Browse our coding courses at Next Gen Coders Academy. Learn programming languages and gain hands-on experience. Start learning now!",
+    });
   } catch (error) {
     console.log(error)
     res.status(500).json({ error: "Could not fetch courses." });
@@ -32,17 +37,27 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-    try {
-        const id = req.params.id;
-        // console.log(id)
-        const course = await Course.findById(id);
-        // console.log(course)
-        res.render('courses/show', { 
-            course,
-            moment 
-        });
-    } catch (error) {
-        console.log(error)
-        res.render('404');
-    }
+  try {
+    const id = req.params.id;
+    // console.log(id)
+    const course = await Course.findById(id);
+    
+    const courseTitle = course.name ? 
+      `${course.name} | NextGen Coders Academy` : 
+      "Sign up now! | NextGen Coders Academy"
+    
+    const courseMetaDescription = course.name ? 
+      `Enroll in ${course.name} at Next Gen Coders Academy. Master web development and advance your programming career.` : 
+      "Enroll at Next Gen Coders Academy. Master web development and advance your programming career."
+
+    res.render('courses/show', { 
+      course,
+      moment,
+      title: courseTitle,
+      metaDescription: courseMetaDescription,
+    });
+  } catch (error) {
+    console.log(error)
+    res.render('404');
+  }
 }
