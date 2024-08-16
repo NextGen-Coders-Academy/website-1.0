@@ -1,11 +1,13 @@
 const db = require("../database/models");
 const Course = db.Course;
 const moment = require('moment'); // datetime conversion for ejs
+const { sendSignupEmails } = require("../config/emailLogic");
 
 module.exports = {
   apiCourses,
   index,
-  show
+  show,
+  submitSignupForm,
 };
 
 // postman testing
@@ -37,9 +39,10 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
+  const id = req.params.id;
+  console.log('Request body:', req.body);
+  
   try {
-    const id = req.params.id;
-    // console.log(id)
     const course = await Course.findById(id);
     
     const courseTitle = course.name ? 
@@ -48,16 +51,54 @@ async function show(req, res) {
     
     const courseMetaDescription = course.name ? 
       `Enroll in ${course.name} at Next Gen Coders Academy. Master web development and advance your programming career.` : 
-      "Enroll at Next Gen Coders Academy. Master web development and advance your programming career."
-
+      "Enroll at NextGen Coders Academy. Master web development and advance your programming career."
+    
     res.render('courses/show', { 
       course,
       moment,
       title: courseTitle,
       metaDescription: courseMetaDescription,
     });
+
   } catch (error) {
     console.log(error)
-    res.render('404');
+    if(error){
+      res.status(500).render('404', {
+        title: "Oops! Our bad... | NextGen Coders Academy",
+        metaDescription: "It looks like there was an issue registering you for the course or event. Try again!"
+      });
+    }
+  }
+}
+
+async function submitSignupForm(req, res) {
+  const courseId = req.params.id;
+  
+  try {
+    const course = await Course.findById(courseId);
+    if (!course) {
+      return res.status(404).render('404');
+    }
+
+    const student = {
+      name: `${req.body.firstName} ${req.body.lastName}`,
+      email: req.body.email,
+    };
+
+    const teacher = { 
+      name: 'Eric Fithian', 
+      email: 'ericfithian25@gmail.com', 
+    };
+
+    sendSignupEmails(student, teacher, course);
+    res.status(200).render('courses/show', { 
+      course,
+      moment,
+      title: `${course.name} | NextGen Coders Academy`,
+      metaDescription: "Success! You're on your way to mastering web development and advancing your programming career!",
+    });
+  } catch (error) {
+    console.error('Error during form submission:', error);
+    res.status(500).send('Error during signup, please try again.');
   }
 }
