@@ -3,8 +3,6 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-// For the commit
-
 const { aboutController, baseController, courseController, employeeController, eventController, prospectController, recordingController, studentController, userController } = require('./controllers');
 const methodOverride = require('method-override');
 
