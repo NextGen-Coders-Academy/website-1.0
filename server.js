@@ -3,8 +3,8 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-// getting it online again with this.
-// This is bringing in the exports from my musicians controller
+// For the commit
+
 const { aboutController, baseController, courseController, employeeController, eventController, prospectController, recordingController, studentController, userController } = require('./controllers');
 const methodOverride = require('method-override');
 
