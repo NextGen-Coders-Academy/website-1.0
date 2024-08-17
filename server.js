@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 
 // For the commit
-// This is bringing in the exports from my musicians controller
+
 const { aboutController, baseController, courseController, employeeController, eventController, prospectController, recordingController, studentController, userController } = require('./controllers');
 const methodOverride = require('method-override');
 
@@ -25,7 +25,8 @@ app.use(express.static('public'));
 
 // Forms do not come in the way I would want them to normally. I need to make sure I parse the information so that it works alongside EJS. Parses the information in express into something that will be in the req.body
 // You can also npm i body-parser and then invoke it and do the same
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // This is method override. This allows us to go and override what a form normally wants to do. A form with this allows us with a ? and then an _method= to set it to either update or delete on the submission of the form
 app.use(methodOverride('_method'));
@@ -71,36 +72,39 @@ app.get('/about', aboutController.index);
 app.get('/request-info', prospectController.index);
 
 // all courses page
-app.get('/courses', courseController.index)
+app.get('/courses', courseController.index);
 
 // single course page
-app.get('/courses/:id', courseController.show)
+app.get('/courses/:id', courseController.show);
+
+// post sign up route/handle email confirmations
+app.post('/courses/:id/signup', courseController.submitSignupForm);
 
 // all events page
-app.get('/events', eventController.index)
+app.get('/events', eventController.index);
 
 // single event page
-app.get('/events/:id', eventController.show)
+app.get('/events/:id', eventController.show);
 
 // create prospect
-app.post('/prospects', prospectController.create)
+app.post('/prospects', prospectController.create);
 
 // all recordings page
-app.get('/recordings', recordingController.index)
+app.get('/recordings', recordingController.index);
 
 // single recordings page
-app.get('/recordings/:id', recordingController.show)
+app.get('/recordings/:id', recordingController.show);
 
 // create student
-app.post('/students', studentController.create)
+app.post('/students', studentController.create);
 
 // api check
-app.get('/api/courses', courseController.apiCourses)
+app.get('/api/courses', courseController.apiCourses);
 
-app.get('/api/employees', employeeController.apiEmployees)
+app.get('/api/employees', employeeController.apiEmployees);
 
 // 404 page
-app.get('*', baseController.notFound)
+app.get('*', baseController.notFound);
 
 // IMPORTANT! Uncomment prod and comment 
 // dev before pushing changes

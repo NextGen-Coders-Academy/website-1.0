@@ -33,7 +33,9 @@ async function register(req, res, next) {
         res.status(201).render('')
         const courses = await Course.find();
         
-        res.render('courses/index', { courses });
+        res.render('courses/index', { 
+            courses,
+        });
         
         //   return res.redirect('/');
     } catch (error) {
@@ -79,17 +81,26 @@ async function login(req, res, next) {
 }
 
 async function registerForm(req, res) {
-    res.render('auth/register')
+    res.render('auth/register', {
+        metaDescription: "Sign up for coding courses at Next Gen Coders Academy. Start your journey to becoming a coding expert by registering today!",
+        title: "Register for Courses | NextGen Coders Academy",
+    })
 }
 
 async function loginForm(req, res) {
-    res.render('auth/login')
+    res.render('auth/login', {
+        title: "Student Login | Next Gen Coders Academy",
+        metaDescription: "Access your account at Next Gen Coders Academy. Login to view your courses, progress, and more. Continue your learning journey.",
+    })
 }
 
 async function logout(req, res, next) {
     try {
         res.setHeader('Clear-Site-Data', '"cookies"');
-        res.status(200).redirect('/auth/login');
+        res.status(200).redirect('/auth/login', {
+            title: "Student Login | Next Gen Coders Academy",
+            metaDescription: "Access your account at Next Gen Coders Academy. Login to view your courses, progress, and more. Continue your learning journey.",
+        });
     } catch (error) {
         res.send({message: 'logout failed'})
     }

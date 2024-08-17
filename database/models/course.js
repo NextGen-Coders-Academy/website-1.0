@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { INTEGER } = require('sequelize');
+// const { INTEGER } = require('sequelize');
 
 const courseSchema = new mongoose.Schema({
   name: {
