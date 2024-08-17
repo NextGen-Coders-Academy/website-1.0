@@ -24,7 +24,11 @@ async function getAllProspects(req, res) {
 async function index(req, res) {
   try {
     const prospects = await Prospect.find();
-    res.render('reqinfo/index', { prospects });
+    res.render('reqinfo/index', { 
+      prospects,
+      title: "Request More Information | Next Gen Coders Academy",
+      metaDescription: "Need more details about our courses? Request information today and learn how Next Gen Coders Academy can help you achieve your goals.",
+    })
   } catch (error) {
     console.log(error)
     res.status(500).json({ error: "Could not fetch prospects." });
